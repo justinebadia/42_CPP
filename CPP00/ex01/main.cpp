@@ -2,6 +2,7 @@
 #include "Contact.class.hpp"
 
 
+
 void newContact(std::string info[])
 {
 	std::cout<< "What's your name ?" << std::endl;
@@ -29,32 +30,39 @@ Contact	data_to_contact(std::string data[])
 	return (newContact);
 }
 
+void clear_data(std::string data[])
+{
+	for (int i = 4; i >= 0 ; i--)
+		data[i].clear();
+}
+
 int main(void)
 {
 	PhoneBook repertoire;
-	int		i = 0;
 	std::string cmd;
 	std::string data[5];
 
-	std::cout << "Enter your command please : " << std::endl;
-	std::cin >> cmd;
+	while(cmd != "EXIT")
+	{
+		std::cout << "Enter your command please : " << std::endl;
+		std::cin >> cmd;
+		if (cmd == "ADD")
+		{
+			newContact(data);
+			repertoire.add_Contact(data_to_contact(data), data);
+			clear_data(data);
+			cmd = "";
+		}
+		else if (cmd == "SEARCH")
+		{
+			repertoire.print_Book_Data();
 
-	if (cmd == "ADD")
-	{
-		newContact(data); // remettre data a null à chque fois ?
-		repertoire.add_Contact(data_to_contact(data));
+		}
+		else if (cmd == "EXIT")
+			exit (0);
+		else
+			std::cout << "Please, type a valid command !" << std::endl;
+		cmd = "";
 	}
-	else if (cmd == "SEARCH")
-	{
-		std:: cout << "SEARCH" << std::endl;
-
-	}
-	else if (cmd == "EXIT")
-	{
-		std:: cout << "EXIT" << std::endl;
-	}
-	else
-		std::cout << "Please, type a valid command !" << std::endl;
-	std:: cout << repertoire.m_friend[0].m_firstName;
 	return (0);
 }
