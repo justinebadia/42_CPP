@@ -6,7 +6,7 @@
 #    By: jbadia <jbadia@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/11 09:35:55 by jbadia            #+#    #+#              #
-#    Updated: 2022/04/11 10:50:02 by jbadia           ###   ########.fr        #
+#    Updated: 2022/04/11 16:04:23 by jbadia           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ CVIOLETBG = \033[45m
 CWHITEBG  = \033[47m
 CGREEN2  = \033[92m
 
-NAME = PhoneBook
+NAME = Zombie
 
 CC = clang++
 FLAGS = -Wall -Wextra -Werror -std=c++98
