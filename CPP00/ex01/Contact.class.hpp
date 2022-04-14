@@ -6,7 +6,7 @@
 /*   By: jbadia <jbadia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 09:31:25 by jbadia            #+#    #+#             */
-/*   Updated: 2022/04/11 13:43:34 by jbadia           ###   ########.fr       */
+/*   Updated: 2022/04/14 10:39:52 by jbadia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,5 +46,7 @@ class Contact
 	std::string m_phoneNumber;
 	std::string m_darkestSecret;
 };
+
+bool checkSpaces(std::string str);
 
 #endif

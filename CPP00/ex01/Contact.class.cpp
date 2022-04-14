@@ -6,7 +6,7 @@
 /*   By: jbadia <jbadia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 09:49:14 by jbadia            #+#    #+#             */
-/*   Updated: 2022/04/11 13:47:31 by jbadia           ###   ########.fr       */
+/*   Updated: 2022/04/14 15:37:42 by jbadia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,23 +26,50 @@ Contact::Contact()
 Contact::~Contact()
 {}
 
+bool	checkSpaces(std::string str)
+{
+	for (std::string::iterator it = str.begin(); it != str.end(); ++it)
+	{
+		if (!isspace(*it))
+			return (true);
+	}
+	return (false);
+}
+
 Contact Contact::get_Contact_info(void)
 {
 	Contact newContact;
 
-	std::cout<< BLUP "What's your name ?" BLU << std::endl;
-	std::getline(std::cin, newContact.m_firstName);
-	std::cout<< BLUP"What's your lastname ?" BLU << std::endl;
-	std::getline(std::cin, newContact.m_lastName);
-	std::cout<< BLUP"What's your nickname ?"BLU << std::endl;
-	std::getline(std::cin, newContact.m_nickName);
-	std::cout<< BLUP"What's your phone number ?"BLU << std::endl;
-	std::getline(std::cin, newContact.m_phoneNumber);
-	std::cout<< BLUP"What's your darket secret ?" BLU << std::endl;	
-	std::getline(std::cin, newContact.m_darkestSecret);
+	do
+	{
+		std::cout<< BLUP "What's your name ?" BLU << std::endl;
+		std::getline(std::cin, newContact.m_firstName);
+	} while(newContact.m_firstName.empty() || !checkSpaces(newContact.m_firstName));
+	do
+	{
+		std::cout<< BLUP"What's your lastname ?" BLU << std::endl;
+		std::getline(std::cin, newContact.m_lastName);
+	} while (newContact.m_lastName.empty() || !checkSpaces(newContact.m_lastName));
+	do
+	{
+		std::cout<< BLUP"What's your nickname ?"BLU << std::endl;
+		std::getline(std::cin, newContact.m_nickName);
+	} while ( newContact.m_nickName.empty() || !checkSpaces(newContact.m_nickName));
+	do
+	{
+		std::cout<< BLUP"What's your phone number ?"BLU << std::endl;
+		std::getline(std::cin, newContact.m_phoneNumber);
+	} while (newContact.m_phoneNumber.empty() || !checkSpaces(newContact.m_phoneNumber));
+	do
+	{
+		std::cout<< BLUP"What's your darket secret ?" BLU << std::endl;	
+		std::getline(std::cin, newContact.m_darkestSecret);
+	} while (newContact.m_darkestSecret.empty() || !checkSpaces(newContact.m_darkestSecret));
+	
 		
 	return (newContact);
 }
+
 
 void Contact::print_Data(void)
 {
