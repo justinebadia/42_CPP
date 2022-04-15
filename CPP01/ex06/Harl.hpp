@@ -23,16 +23,23 @@
 #define VIO "\e[35m"
 #define NC "\e[0m"
 
+typedef enum
+{
+    DEBUG,
+    INFO,
+    WARNING,
+    ERROR,
+};
+
 class Harl
 {
     public:
     Harl();
     ~Harl();
-    void    complain(std::string level);
-    std::string const arrayHarl(void);
+    void    complain(std::string level) const;
 
     private:
-    std::string m_array[4];
+    std::string const m_array[4];
     void    debug(void);
     void    info(void);
     void    warning(void);

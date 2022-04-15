@@ -14,7 +14,10 @@
 
 Harl::Harl()
 {
-    m_array[0] = 
+    m_array[0] = "DEBUG";
+    m_array[1] = "INFO";
+    m_array[2] = "WARNING";
+    m_array[3] = "ERROR";
 }
 
 Harl::~Harl()
@@ -32,7 +35,7 @@ void    Harl::info(void)
 
 void    Harl::warning(void)
 {
-    std::cout << VIO "I think I deserve to have some extra bacon for free. I’ve been coming for years whereas you started working here since last month." NC << std::endl;
+    std::cout << BLU "I think I deserve to have some extra bacon for free. I’ve been coming for years whereas you started working here since last month." NC << std::endl;
 }
 
 void    Harl::error(void)
@@ -41,23 +44,28 @@ void    Harl::error(void)
 
 }
 
-std::string const Harl::arrayHarl(void)
+void    Harl::complain(std::string level) const
 {
-    std::string const array[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
+    for (int i = 0; i < str.size() ; i++)
+        if (level == m_array[i])
+            break ;
     
-    return (array);
-}
-
-void    Harl::complain(std::string level)
-{
-    switch(i)
+    switch (i)
     {
-        case 1:
+        case 0:
             debug();
             break;
+        case 1:
+            info();
+            break;
+        case 2:
+            warning();
+            break;
+        case 3:
+            error();
+            break;
         default:
-         std::cout << RED "Hi I'm nice !" NC << std::endl;
-         break;
-
+            std::cout << "Probably complaining about insignificant problems" NC << std::endl;
+            break;
     }
 }
