@@ -1,32 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Weapon.hpp                                         :+:      :+:    :+:   */
+/*   Harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jbadia <jbadia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/14 15:47:47 by jbadia            #+#    #+#             */
-/*   Updated: 2022/04/15 11:39:06 by jbadia           ###   ########.fr       */
+/*   Created: 2022/04/15 12:10:21 by jbadia            #+#    #+#             */
+/*   Updated: 2022/04/15 14:22:14 by jbadia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WEAPON_HPP
-#define WEAPON_HPP
+#ifndef HARL_HPP
+#define HARL_HPP
 
-#include <iostream>
 #include <string>
+#include <iostream>
 
-class Weapon
+#define RED "\e[0;31m"
+#define GRN "\e[0;32m"
+#define CYN "\e[0;36m"
+#define BLU "\e[0;34m"
+#define VIO "\e[35m"
+#define NC "\e[0m"
+
+class Harl
 {
     public:
-    Weapon(std::string type);
-    Weapon();
-    ~Weapon();
-    std::string const &getType(void);
-    void setType(std::string newArm);
+    Harl();
+    ~Harl();
+    void    complain(std::string level);
+    std::string const arrayHarl(void);
 
     private:
-    std::string m_type;
+    std::string m_array[4];
+    void    debug(void);
+    void    info(void);
+    void    warning(void);
+    void    error(void);
 };
+
 
 #endif

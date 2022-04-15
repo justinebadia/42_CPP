@@ -6,19 +6,18 @@
 /*   By: jbadia <jbadia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/14 15:47:45 by jbadia            #+#    #+#             */
-/*   Updated: 2022/04/14 17:19:04 by jbadia           ###   ########.fr       */
+/*   Updated: 2022/04/15 11:50:22 by jbadia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "weapon.hpp"
+#include "Weapon.hpp"
 
-
-Weapon::Weapon()
-{}
 
 Weapon::Weapon(std::string type) : m_type(type)
 {}
 
+Weapon::Weapon()
+{}
 
 Weapon::~Weapon()
 {}
