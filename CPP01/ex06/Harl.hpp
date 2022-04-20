@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jbadia <jbadia@student.42.fr>              +#+  +:+       +#+        */
+/*   By: jbadia <jbadia@student.42quebec.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/15 12:10:21 by jbadia            #+#    #+#             */
-/*   Updated: 2022/04/15 14:22:14 by jbadia           ###   ########.fr       */
+/*   Updated: 2022/04/16 12:25:41 by jbadia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,23 +23,15 @@
 #define VIO "\e[35m"
 #define NC "\e[0m"
 
-typedef enum
-{
-    DEBUG,
-    INFO,
-    WARNING,
-    ERROR,
-};
-
 class Harl
 {
     public:
     Harl();
     ~Harl();
-    void    complain(std::string level) const;
+    void    complain(std::string level);
 
     private:
-    std::string const m_array[4];
+    std::string m_array[4];
     void    debug(void);
     void    info(void);
     void    warning(void);

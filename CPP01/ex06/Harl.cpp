@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Harl.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jbadia <jbadia@student.42.fr>              +#+  +:+       +#+        */
+/*   By: jbadia <jbadia@student.42quebec.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/15 12:10:20 by jbadia            #+#    #+#             */
-/*   Updated: 2022/04/15 14:22:48 by jbadia           ###   ########.fr       */
+/*   Updated: 2022/04/16 12:28:15 by jbadia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,12 +44,12 @@ void    Harl::error(void)
 
 }
 
-void    Harl::complain(std::string level) const
+void    Harl::complain(std::string level)
 {
-    for (int i = 0; i < str.size() ; i++)
+	unsigned int i = 0;
+    for (; i < level.size() ; i++)
         if (level == m_array[i])
             break ;
-    
     switch (i)
     {
         case 0:
@@ -65,7 +65,7 @@ void    Harl::complain(std::string level) const
             error();
             break;
         default:
-            std::cout << "Probably complaining about insignificant problems" NC << std::endl;
+            std::cout << VIO "Probably complaining about insignificant problems" NC << std::endl;
             break;
     }
 }
