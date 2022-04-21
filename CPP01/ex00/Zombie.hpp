@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jbadia <jbadia@student.42quebec.com>       +#+  +:+       +#+        */
+/*   By: jbadia <jbadia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 10:50:29 by jbadia            #+#    #+#             */
-/*   Updated: 2022/04/12 10:52:43 by jbadia           ###   ########.fr       */
+/*   Updated: 2022/04/21 10:39:31 by jbadia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ class Zombie
     std::string m_name;
 };
 
-Zombie *newZombie(std::string name);
+Zombie  *newZombie(std::string name);
 void    randomChump(std::string name);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: jbadia <jbadia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/21 11:10:12 by jbadia            #+#    #+#             */
-/*   Updated: 2022/04/21 11:12:17 by jbadia           ###   ########.fr       */
+/*   Updated: 2022/04/21 15:30:57 by jbadia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,15 +27,24 @@ class Fixed
 	public:
 	Fixed();
 	Fixed(Fixed const &src);
+    Fixed(int const nb);
+    Fixed(float const nb);
 	~Fixed();
 
 	Fixed 	&operator=(Fixed const &rhs);
 	int		getRawBits(void) const;
 	void	setRawBits(int const raw);
+    float   toFloat(void) const;
+    int     toInt(void) const;
 	
 	private:
 		int _integer;
 		static const int _bits;
 };
+/*On ne peut pas faire une surcharge de fonction membre pour les <<
+le 1er param est une référence sur une instance de ostream (cout)
+et en 2eme param, notre classe pour faire l'affichage*/
+std::ostream    &operator<<(std::ostream &o, Fixed const &rhs);
+void	print_bit(int n);
 
 #endif

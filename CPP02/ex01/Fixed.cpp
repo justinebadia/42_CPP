@@ -6,7 +6,7 @@
 /*   By: jbadia <jbadia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/21 11:10:17 by jbadia            #+#    #+#             */
-/*   Updated: 2022/04/21 11:13:17 by jbadia           ###   ########.fr       */
+/*   Updated: 2022/04/21 15:41:39 by jbadia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,4 +51,25 @@ void Fixed::setRawBits(int const raw)
 {
 	std::cout << BLU "setRawBits member function called" NC << std::endl;
 	this->_integer = raw;
+}
+
+std::ostream    &operator<<(std::ostream &o, Fixed const &rhs)
+{
+    o << rhs.getRawBits();
+    return (o); //on retourne la référence sur o pour pouvoir chainer des flux de redirection
+}
+
+void	print_bit(int n)
+{
+	int b = 31;
+
+	while (n & (b << 1))
+	{
+		if (b == 1)
+			std::cout << "1";
+		else
+			std::cout << "0";
+		b--;
+	}
+	std::cout << std::endl;
 }

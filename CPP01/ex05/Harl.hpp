@@ -6,7 +6,7 @@
 /*   By: jbadia <jbadia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/15 12:10:21 by jbadia            #+#    #+#             */
-/*   Updated: 2022/04/15 15:41:18 by jbadia           ###   ########.fr       */
+/*   Updated: 2022/04/21 10:57:19 by jbadia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,11 @@ class Harl
 
     private:
     std::string m_array[4];
-    void    debug(void);
-    void    info(void);
-    void    warning(void);
-    void    error(void);
-    void    (Harl::*m_f[4])(void);
+    void        debug(void);
+    void        info(void);
+    void        warning(void);
+    void        error(void);
+    void        (Harl::*m_f[4])(void);
 };
 
 
