@@ -54,6 +54,96 @@ Fixed &Fixed::operator=(Fixed const &rhs)
 	return (*this);
 }
 
+Fixed &Fixed::operator+(Fixed const &rhs)
+{
+	return (this->toFloat() + rhs.toFloat());
+}
+
+Fixed &Fixed::operator-(Fixed const &rhs)
+{
+	return (this->toFloat() - rhs.toFloat());
+}
+
+bool &Fixed::operator<(Fixed const &rhs)
+{
+	if (this->getRawBits() < rhs.getRawBits())
+		return (true);
+	else
+		return (false);
+}
+
+bool &Fixed::operator>(Fixed const &rhs)
+{
+	if (this->getRawBits() > rhs.getRawBits())
+		return (true);
+	else
+		return (false);
+}
+
+bool &Fixed::operator<=(Fixed const &rhs)
+{
+	if (this->getRawBits() <= rhs.getRawBits())
+		return (true);
+	else
+		return (false);
+}
+
+bool &Fixed::operator>=(Fixed const &rhs)
+{
+	if (this->getRawBits() >= rhs.getRawBits())
+		return (true);
+	else
+		return (false);
+}
+
+bool &Fixed::operator==(Fixed const &rhs)
+{
+	if (this->getRawBits() == rhs.getRawBits())
+		return (true);
+	else
+		return (false);
+}
+
+bool &Fixed::operator!=(Fixed const &rhs)
+{
+	if (this->getRawBits() != rhs.getRawBits())
+		return (true);
+	else
+		return (false);
+}
+
+static Fixed::min(Fixed &a, Fixed &b)
+{
+	if (a < b)
+		return (a);
+	else
+		return (b);
+}
+
+const Fixed::min(const Fixed &a, const Fixed &b)
+{
+	if (a < b)
+		return (a);
+	else
+		return (b);
+}
+
+static Fixed::max(Fixed &a, Fixed &b)
+{
+	if (a > b)
+		return (a);
+	else
+		return (b);
+}
+
+const Fixed::max(const Fixed &a, const Fixed &b)
+{
+	if (a > b)
+		return (a);
+	else
+		return (b);
+}
+
 int	Fixed::getRawBits(void) const
 {
 	return (this->_nb);

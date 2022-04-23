@@ -33,6 +33,22 @@ class Fixed
 	~Fixed();
 
 	Fixed 	&operator=(Fixed const &rhs);
+	Fixed	&operator+(Fixed const &rhs);
+	Fixed	&operator-(Fixed const &rhs);
+	Fixed	&operator*(Fixed const &rhs);
+	Fixed	&operator/(Fixed const &rhs);
+	bool	&operator<(Fixed const &rhs);
+	bool	&operator>(Fixed const &rhs);
+	bool	&operator<=(Fixed const &rhs);
+	bool	&operator>=(Fixed const &rhs);
+	bool	&operator==(Fixed const &rhs);
+	bool	&operator!=(Fixed const &rhs);
+
+	static Fixed min(Fixed &a, Fixed &b);
+	const Fixed min(const Fixed &a, const Fixed &b);
+	static Fixed max(Fixed &a, Fixed &b);
+	const Fixed max(const Fixed &a, const Fixed &b);
+
 	int		getRawBits(void) const;
 	void	setRawBits(int const raw);
     float   toFloat(void) const;
@@ -46,6 +62,7 @@ class Fixed
 le 1er param est une référence sur une instance de ostream (cout)
 et en 2eme param, notre classe pour faire l'affichage*/
 std::ostream    &operator<<(std::ostream &o, Fixed const &rhs);
+
 void	print_bit(int n);
 
 #endif
