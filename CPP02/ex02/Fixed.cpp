@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jbadia <jbadia@student.42.fr>              +#+  +:+       +#+        */
+/*   By: jbadia <jbadia@student.42quebec.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/21 11:10:17 by jbadia            #+#    #+#             */
-/*   Updated: 2022/04/22 15:22:55 by jbadia           ###   ########.fr       */
+/*   Updated: 2022/04/25 10:47:43 by jbadia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,17 +54,40 @@ Fixed &Fixed::operator=(Fixed const &rhs)
 	return (*this);
 }
 
-Fixed &Fixed::operator+(Fixed const &rhs)
+Fixed Fixed::operator+(Fixed const &rhs)
 {
-	return (this->toFloat() + rhs.toFloat());
+	Fixed temp;
+
+	temp = this->toFloat() + rhs.toFloat();
+	return (temp);
 }
 
-Fixed &Fixed::operator-(Fixed const &rhs)
+Fixed Fixed::operator-(Fixed const &rhs)
 {
-	return (this->toFloat() - rhs.toFloat());
+	Fixed temp;
+
+	temp = this->toFloat() - rhs.toFloat();
+	return (temp);
 }
 
-bool &Fixed::operator<(Fixed const &rhs)
+Fixed Fixed::operator*(Fixed const &rhs)
+{
+	Fixed result;
+	
+	result = this->toFloat() * rhs.toFloat();
+	result.toFloat();
+	return ((result));
+}
+
+Fixed	Fixed::operator/(Fixed const &rhs)
+{
+	Fixed result;
+
+	result = this->toFloat() / rhs.toFloat();
+	return (result);
+}
+
+bool Fixed::operator<(Fixed const &rhs) const
 {
 	if (this->getRawBits() < rhs.getRawBits())
 		return (true);
@@ -72,7 +95,7 @@ bool &Fixed::operator<(Fixed const &rhs)
 		return (false);
 }
 
-bool &Fixed::operator>(Fixed const &rhs)
+bool Fixed::operator>(Fixed const &rhs) const
 {
 	if (this->getRawBits() > rhs.getRawBits())
 		return (true);
@@ -80,7 +103,7 @@ bool &Fixed::operator>(Fixed const &rhs)
 		return (false);
 }
 
-bool &Fixed::operator<=(Fixed const &rhs)
+bool Fixed::operator<=(Fixed const &rhs) const
 {
 	if (this->getRawBits() <= rhs.getRawBits())
 		return (true);
@@ -88,7 +111,7 @@ bool &Fixed::operator<=(Fixed const &rhs)
 		return (false);
 }
 
-bool &Fixed::operator>=(Fixed const &rhs)
+bool Fixed::operator>=(Fixed const &rhs) const
 {
 	if (this->getRawBits() >= rhs.getRawBits())
 		return (true);
@@ -96,7 +119,7 @@ bool &Fixed::operator>=(Fixed const &rhs)
 		return (false);
 }
 
-bool &Fixed::operator==(Fixed const &rhs)
+bool Fixed::operator==(Fixed const &rhs) const 
 {
 	if (this->getRawBits() == rhs.getRawBits())
 		return (true);
@@ -104,7 +127,7 @@ bool &Fixed::operator==(Fixed const &rhs)
 		return (false);
 }
 
-bool &Fixed::operator!=(Fixed const &rhs)
+bool Fixed::operator!=(Fixed const &rhs) const
 {
 	if (this->getRawBits() != rhs.getRawBits())
 		return (true);
@@ -112,7 +135,35 @@ bool &Fixed::operator!=(Fixed const &rhs)
 		return (false);
 }
 
-static Fixed::min(Fixed &a, Fixed &b)
+Fixed	Fixed::operator++(int)
+{
+	Fixed temp(*this);
+	
+	++_nb;
+	return(temp);
+}
+
+Fixed	Fixed::operator--(int)
+{
+	Fixed temp(*this);
+
+	--_nb;
+	return(temp);
+}
+
+Fixed	&Fixed::operator++(void)
+{
+	++_nb;
+	return(*this);
+}
+
+Fixed	&Fixed::operator--(void)
+{
+	--_nb;
+	return (*this);
+}
+
+Fixed &Fixed::min(Fixed &a, Fixed &b)
 {
 	if (a < b)
 		return (a);
@@ -120,7 +171,7 @@ static Fixed::min(Fixed &a, Fixed &b)
 		return (b);
 }
 
-const Fixed::min(const Fixed &a, const Fixed &b)
+const Fixed &Fixed::min(const Fixed &a, const Fixed &b)
 {
 	if (a < b)
 		return (a);
@@ -128,7 +179,7 @@ const Fixed::min(const Fixed &a, const Fixed &b)
 		return (b);
 }
 
-static Fixed::max(Fixed &a, Fixed &b)
+Fixed &Fixed::max(Fixed &a, Fixed &b)
 {
 	if (a > b)
 		return (a);
@@ -136,7 +187,7 @@ static Fixed::max(Fixed &a, Fixed &b)
 		return (b);
 }
 
-const Fixed::max(const Fixed &a, const Fixed &b)
+const Fixed &Fixed::max(const Fixed &a, const Fixed &b)
 {
 	if (a > b)
 		return (a);

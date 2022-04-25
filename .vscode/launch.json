@@ -8,8 +8,8 @@
             "type": "lldb",
             "request": "launch",
             "name": "Debug",
-            "program": "/Users/justine/Documents/dev/CPP/CPP01/ex04/ex04",
-            "args": ["test" "salut" "aurevoir"],
+            "program": "/Users/justine/Documents/dev/CPP/CPP03/ex03/DiamondTrap",
+            "args": [],
             "cwd": "${workspaceFolder}"
         }
     ]

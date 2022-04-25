@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jbadia <jbadia@student.42.fr>              +#+  +:+       +#+        */
+/*   By: jbadia <jbadia@student.42quebec.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/21 11:10:12 by jbadia            #+#    #+#             */
-/*   Updated: 2022/04/22 10:44:55 by jbadia           ###   ########.fr       */
+/*   Updated: 2022/04/25 10:23:36 by jbadia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,21 +33,26 @@ class Fixed
 	~Fixed();
 
 	Fixed 	&operator=(Fixed const &rhs);
-	Fixed	&operator+(Fixed const &rhs);
-	Fixed	&operator-(Fixed const &rhs);
-	Fixed	&operator*(Fixed const &rhs);
-	Fixed	&operator/(Fixed const &rhs);
-	bool	&operator<(Fixed const &rhs);
-	bool	&operator>(Fixed const &rhs);
-	bool	&operator<=(Fixed const &rhs);
-	bool	&operator>=(Fixed const &rhs);
-	bool	&operator==(Fixed const &rhs);
-	bool	&operator!=(Fixed const &rhs);
+	Fixed	operator+(Fixed const &rhs);
+	Fixed	operator-(Fixed const &rhs);
+	Fixed	operator*(Fixed const &rhs);
+	Fixed	operator/(Fixed const &rhs);
+	Fixed	operator++(int);
+	Fixed	operator--(int);
+	Fixed	&operator++(void);
+	Fixed	&operator--(void);
 
-	static Fixed min(Fixed &a, Fixed &b);
-	const Fixed min(const Fixed &a, const Fixed &b);
-	static Fixed max(Fixed &a, Fixed &b);
-	const Fixed max(const Fixed &a, const Fixed &b);
+	bool	operator<(Fixed const &rhs) const;
+	bool	operator>(Fixed const &rhs) const;
+	bool	operator<=(Fixed const &rhs) const;
+	bool	operator>=(Fixed const &rhs) const;
+	bool	operator==(Fixed const &rhs) const;
+	bool	operator!=(Fixed const &rhs) const;
+
+	static Fixed &min(Fixed &a, Fixed &b);
+	static const Fixed &min(const Fixed &a, const Fixed &b);
+	static Fixed &max(Fixed &a, Fixed &b);
+	static const Fixed &max(const Fixed &a, const Fixed &b);
 
 	int		getRawBits(void) const;
 	void	setRawBits(int const raw);

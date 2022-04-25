@@ -3,10 +3,17 @@
 ClapTrap::ClapTrap()
 {
     _name = "Clappy";
-    _hitPoint = 0;
-    _energyPoint = 0;
+    _hitPoint = 10;
+    _energyPoint = 10;
     _attackDamage = 0;
-    std::cout << VIO "Le constructeur par défaut créer Clappy" NC << std::endl;
+    std::cout << VIO "Le constructeur par défaut créait Clappy" NC << std::endl;
+}
+
+ClapTrap::ClapTrap(ClapTrap const &src)
+{
+	std::cout << CYN "Copy constructor called" NC << std::endl;
+	*this = src;
+	return ;
 }
 
 ClapTrap::~ClapTrap()
@@ -20,7 +27,18 @@ ClapTrap::ClapTrap(std::string name) : _name(name)
     _energyPoint = 10;
     _attackDamage = 0;
     std::cout << VIO "Le constructeur à créé Clap Trap " << _name << ". Il a " << _energyPoint << " vies" NC<< std::endl;
+}
 
+ClapTrap &ClapTrap::operator=(ClapTrap const &rhs)
+{
+	std::cout << VIO "Copy assignment operator called" NC << std::endl;
+	if (this != &rhs)
+	{
+		this->_hitPoint = 10;
+    	this->_energyPoint = 10;
+    	this->_attackDamage = 0;
+	}
+	return (*this);
 }
 
 void    ClapTrap::attack(const std::string &target)
