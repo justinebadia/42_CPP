@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jbadia <jbadia@student.42quebec.com>       +#+  +:+       +#+        */
+/*   By: jbadia <jbadia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/21 11:10:12 by jbadia            #+#    #+#             */
-/*   Updated: 2022/04/25 10:23:36 by jbadia           ###   ########.fr       */
+/*   Updated: 2022/04/26 07:30:36 by jbadia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,14 +60,12 @@ class Fixed
     int     toInt(void) const;
 	
 	private:
-		int 				_nb;
-		static const int 	_bits;
+	int 				_nb;
+	static const int 	_bits;
 };
 /*On ne peut pas faire une surcharge de fonction membre pour les <<
 le 1er param est une référence sur une instance de ostream (cout)
 et en 2eme param, notre classe pour faire l'affichage*/
 std::ostream    &operator<<(std::ostream &o, Fixed const &rhs);
-
-void	print_bit(int n);
 
 #endif

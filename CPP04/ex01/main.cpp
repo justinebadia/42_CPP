@@ -1,34 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.hpp                                       :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jbadia <jbadia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/25 15:54:26 by jbadia            #+#    #+#             */
-/*   Updated: 2022/04/26 08:07:11 by jbadia           ###   ########.fr       */
+/*   Created: 2022/04/26 07:46:25 by jbadia            #+#    #+#             */
+/*   Updated: 2022/04/26 11:44:09 by jbadia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FRAGTRAP_HPP
-#define FRAGTRAP_HPP
+#include "Animal.hpp"
+#include "Cat.hpp"
+#include "Dog.hpp"
+#include "WrongAnimal.hpp"
+#include "WrongCat.hpp"
+#include "Brain.hpp"
 
-#include "ClapTrap.hpp"
-
-class FragTrap : public virtual ClapTrap 
+int main(void)
 {
-	public:
-	FragTrap();
-	FragTrap(std::string name);
-	FragTrap(FragTrap const &src);
-    ~FragTrap();
-
-	FragTrap	&operator=(FragTrap const &rhs);
-	void 		highFivesGuys(void) const;
-
-
-};
-
-
-
-#endif
+    Brain Brain;
+    
+    return 0;
+}

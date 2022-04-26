@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jbadia <jbadia@student.42quebec.com>       +#+  +:+       +#+        */
+/*   By: jbadia <jbadia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 15:51:50 by jbadia            #+#    #+#             */
-/*   Updated: 2022/04/25 15:51:52 by jbadia           ###   ########.fr       */
+/*   Updated: 2022/04/26 08:07:33 by jbadia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 /*ScavTrap est la classe fille - ClapTrap la classe mère
 ScavTrap hérite de CLapTrap et contiendra tous ses attributs
 et méthodes.*/
-class ScavTrap : public ClapTrap
+class ScavTrap : public virtual ClapTrap
 {
 	public:
 	ScavTrap();

@@ -5,8 +5,8 @@
 #                                                     +:+ +:+         +:+      #
 #    By: jbadia <jbadia@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/04/25 15:53:13 by jbadia            #+#    #+#              #
-#    Updated: 2022/04/26 08:16:35 by jbadia           ###   ########.fr        #
+#    Created: 2022/04/26 07:45:37 by jbadia            #+#    #+#              #
+#    Updated: 2022/04/26 11:09:01 by jbadia           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,15 +20,15 @@ CVIOLETBG = \033[45m
 CWHITEBG  = \033[47m
 CGREEN2  = \033[92m
 
-NAME = DiamondTrap
+NAME = ex01
 
-CC = clang++
+CC = c++
 FLAGS = -Wall -Wextra -Werror -std=c++98
 RM = rm -rf
 OBJ = obj
 
-SRC_C = main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp DiamondTrap.cpp
-HDR_H = ClapTrap.hpp ScavTrap.hpp FragTrap.hpp DiamondTap.hpp
+SRC_C = main.cpp Animal.cpp Cat.cpp Dog.cpp WrongAnimal.cpp WrongCat.cpp Brain.cpp
+HDR_H = Animal.hpp Cat.hpp Dog.hpp WrongCat.hpp WrongAnimal.hpp Brain.hpp
 
 OBJS = $(addprefix $(OBJ)/, $(SRC_C:.cpp=.o))
 

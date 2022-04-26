@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   DiamondTrap.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jbadia <jbadia@student.42quebec.com>       +#+  +:+       +#+        */
+/*   By: jbadia <jbadia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 17:34:03 by jbadia            #+#    #+#             */
-/*   Updated: 2022/04/25 18:49:08 by jbadia           ###   ########.fr       */
+/*   Updated: 2022/04/26 08:35:43 by jbadia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,13 @@ class DiamondTrap : public ScavTrap, public FragTrap
 	public:
 	DiamondTrap();
 	DiamondTrap(std::string name);
+	DiamondTrap(DiamondTrap const &src);
+	~DiamondTrap();
 	
+	DiamondTrap &operator=(DiamondTrap const &rhs);
+	void 		attack(const std::string &target);
+	void		whoAmI(void);
+
 	private:
 	std::string _name;
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jbadia <jbadia@student.42quebec.com>       +#+  +:+       +#+        */
+/*   By: jbadia <jbadia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 11:35:32 by jbadia            #+#    #+#             */
-/*   Updated: 2022/04/25 15:43:01 by jbadia           ###   ########.fr       */
+/*   Updated: 2022/04/26 09:36:17 by jbadia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
     _attackDamage = 20;
 	_name = name;
     std::cout << VIO "Le constructeur a créé ScavTrap " << _name << ". Il a " << _energyPoint << " vies" NC<< std::endl;
-
+	return ;
 }
 
 ScavTrap::ScavTrap() : ClapTrap()
@@ -28,11 +28,13 @@ ScavTrap::ScavTrap() : ClapTrap()
     _energyPoint = 50;
     _attackDamage = 20;
 	std::cout << VIO "Constructeur par défaut de ScavTrap. Son nom est " << _name << "." NC << std::endl;
+	return ;
 }
 
 ScavTrap::~ScavTrap()
 {
 	std::cout << VIO "ScavTrap "<< _name << " a été détruit." NC << std::endl;
+	return ;
 }
 
 ScavTrap::ScavTrap(ScavTrap const &src) : ClapTrap(src)

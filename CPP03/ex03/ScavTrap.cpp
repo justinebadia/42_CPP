@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jbadia <jbadia@student.42quebec.com>       +#+  +:+       +#+        */
+/*   By: jbadia <jbadia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 11:35:32 by jbadia            #+#    #+#             */
-/*   Updated: 2022/04/25 15:43:01 by jbadia           ###   ########.fr       */
+/*   Updated: 2022/04/26 08:26:33 by jbadia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,5 @@ void ScavTrap::guardGate(void)
 
 void ScavTrap::attack(const std::string &target)
 {
-	std::cout << BLU "ScavTrap ";
 	ClapTrap::attack(target);
 }

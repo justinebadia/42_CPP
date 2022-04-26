@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jbadia <jbadia@student.42quebec.com>       +#+  +:+       +#+        */
+/*   By: jbadia <jbadia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/21 11:10:17 by jbadia            #+#    #+#             */
-/*   Updated: 2022/04/25 10:47:43 by jbadia           ###   ########.fr       */
+/*   Updated: 2022/04/26 08:37:27 by jbadia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,17 +73,24 @@ Fixed Fixed::operator-(Fixed const &rhs)
 Fixed Fixed::operator*(Fixed const &rhs)
 {
 	Fixed result;
+	int tmp;
 	
-	result = this->toFloat() * rhs.toFloat();
-	result.toFloat();
+	// result = this->toFloat() * rhs.toFloat();
+	// result.toFloat();
+	tmp = this->getRawBits() * rhs.getRawBits();
+	result.setRawBits(tmp >> 8);
 	return ((result));
 }
 
 Fixed	Fixed::operator/(Fixed const &rhs)
 {
 	Fixed result;
+	//int tmp;
 
 	result = this->toFloat() / rhs.toFloat();
+	// tmp = (this->getRawBits() << 8) / rhs.getRawBits();
+	// result.setRawBits(tmp);
+	result.toFloat();
 	return (result);
 }
 
@@ -219,11 +226,4 @@ float	Fixed::toFloat() const
 int	Fixed::toInt() const
 {
 	return (_nb >> _bits);
-}
-
-void	print_bit(int n)
-{
-	for (int i = 31; i >= 0; i--)
-		printf("%d", (n >> i) & 1);
-	printf("\n");
 }
