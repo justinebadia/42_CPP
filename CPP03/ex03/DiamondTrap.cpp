@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   DiamondTrap.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jbadia <jbadia@student.42.fr>              +#+  +:+       +#+        */
+/*   By: jbadia <jbadia@student.42quebec.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 17:34:02 by jbadia            #+#    #+#             */
-/*   Updated: 2022/04/26 08:45:40 by jbadia           ###   ########.fr       */
+/*   Updated: 2022/04/27 17:42:32 by jbadia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,5 @@ void DiamondTrap::attack(const std::string &target)
 
 void DiamondTrap::whoAmI(void)
 {
-	std::cout << GRN "DiamondTrap s'appelle " << _name << std::endl;
-	std::cout << "ClapTrap s'appelle " << ClapTrap::_name << NC << std::endl;
+	std::cout << GRN "I am DiamondTrap " << _name << " from ClapTrap " << ClapTrap::_name << NC << std::endl;
 }

@@ -6,7 +6,7 @@
 /*   By: jbadia <jbadia@student.42quebec.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/23 13:22:00 by jbadia            #+#    #+#             */
-/*   Updated: 2022/04/23 13:49:34 by jbadia           ###   ########.fr       */
+/*   Updated: 2022/04/27 16:51:11 by jbadia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,4 +30,6 @@ int main (void)
 	Clappo.takeDamage(100);
 	Clappo.beRepaired(200);
 	Clappo.attack("Sadik");
+	
+	return 0;
 }

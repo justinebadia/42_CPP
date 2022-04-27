@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jbadia <jbadia@student.42.fr>              +#+  +:+       +#+        */
+/*   By: jbadia <jbadia@student.42quebec.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 15:54:26 by jbadia            #+#    #+#             */
-/*   Updated: 2022/04/26 08:07:11 by jbadia           ###   ########.fr       */
+/*   Updated: 2022/04/27 17:24:47 by jbadia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,6 @@ class FragTrap : public virtual ClapTrap
 
 	FragTrap	&operator=(FragTrap const &rhs);
 	void 		highFivesGuys(void) const;
-
-
 };
-
-
 
 #endif

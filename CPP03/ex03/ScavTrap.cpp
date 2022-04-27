@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jbadia <jbadia@student.42.fr>              +#+  +:+       +#+        */
+/*   By: jbadia <jbadia@student.42quebec.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 11:35:32 by jbadia            #+#    #+#             */
-/*   Updated: 2022/04/26 08:26:33 by jbadia           ###   ########.fr       */
+/*   Updated: 2022/04/27 17:37:07 by jbadia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,14 @@ void ScavTrap::guardGate(void)
 	std::cout << GRN "ScavTrap " << _name << " est entré en mode GateKeeper." NC << std::endl;
 }
 
+
 void ScavTrap::attack(const std::string &target)
 {
-	ClapTrap::attack(target);
+	 if (_energyPoint > 0)
+    {
+        std::cout << BLU << _name << " attacks " << target << " causing " << _attackDamage << " points of damage" NC << std::endl;
+        _energyPoint--;
+    }
+    else
+    	std::cout << RED << _name << " n'a plus d'énergie, il ne peut plus attaquer !" NC << std::endl;
 }

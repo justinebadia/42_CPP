@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jbadia <jbadia@student.42.fr>              +#+  +:+       +#+        */
+/*   By: jbadia <jbadia@student.42quebec.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/21 11:10:12 by jbadia            #+#    #+#             */
-/*   Updated: 2022/04/22 10:44:55 by jbadia           ###   ########.fr       */
+/*   Updated: 2022/04/27 15:55:24 by jbadia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,5 @@ class Fixed
 le 1er param est une référence sur une instance de ostream (cout)
 et en 2eme param, notre classe pour faire l'affichage*/
 std::ostream    &operator<<(std::ostream &o, Fixed const &rhs);
-void	print_bit(int n);
 
 #endif

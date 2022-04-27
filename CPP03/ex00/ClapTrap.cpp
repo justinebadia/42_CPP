@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ClapTrap.cpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jbadia <jbadia@student.42quebec.com>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/04/27 16:47:31 by jbadia            #+#    #+#             */
+/*   Updated: 2022/04/27 16:47:31 by jbadia           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ClapTrap.hpp"
 
 ClapTrap::ClapTrap()
@@ -56,7 +68,7 @@ void    ClapTrap::takeDamage(unsigned int amount)
 {
     _energyPoint -= amount;
 	if (_energyPoint > 0)
-    	std::cout << RED "Clap Trap " << _name << " se fait attaquer. Il ne lui reste plus que " << _energyPoint << " de vie." NC << std::endl;
+    	std::cout << RED "Clap Trap " << _name << " se fait attaquer de  " << amount << ". Il ne lui reste plus que " << _energyPoint << " de vie." NC << std::endl;
 	else
 		std::cout << RED "Clap Trap " << _name << " prend " << amount << " de dégats. Il se meurt." NC << std::endl;	
 }
@@ -66,8 +78,6 @@ void    ClapTrap::beRepaired(unsigned int amount)
 	if (_energyPoint > 0)
 	{
 		_energyPoint += (amount - 1);
-		if (_energyPoint > 10)
-			_energyPoint = 10;
 		std::cout << CYN "Clap Trap " << _name << " se répare de " << amount << ". Il a maintenant " << _energyPoint << " de vie." NC << std::endl;
 	}
 	else

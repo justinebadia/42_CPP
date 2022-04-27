@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jbadia <jbadia@student.42.fr>              +#+  +:+       +#+        */
+/*   By: jbadia <jbadia@student.42quebec.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/21 11:10:17 by jbadia            #+#    #+#             */
-/*   Updated: 2022/04/22 15:22:55 by jbadia           ###   ########.fr       */
+/*   Updated: 2022/04/27 15:57:38 by jbadia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ void Fixed::setRawBits(int const raw)
 std::ostream    &operator<<(std::ostream &o, Fixed const &nb)
 {
     o << nb.toFloat();
-    return (o); //on retourne la référence sur o pour pouvoir chainer des flux de redirection
+    return (o);
 }
 
 float	Fixed::toFloat() const
@@ -78,11 +78,4 @@ float	Fixed::toFloat() const
 int	Fixed::toInt() const
 {
 	return (_nb >> _bits);
-}
-
-void	print_bit(int n)
-{
-	for (int i = 31; i >= 0; i--)
-		printf("%d", (n >> i) & 1);
-	printf("\n");
 }

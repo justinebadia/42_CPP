@@ -10,7 +10,7 @@ CGREEN2  = \033[92m
 
 NAME = ex01
 
-CC = clang++
+CC = c++
 FLAGS = -Wall -Wextra -Werror -std=c++98
 RM = rm -rf
 OBJ = obj

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jbadia <jbadia@student.42.fr>              +#+  +:+       +#+        */
+/*   By: jbadia <jbadia@student.42quebec.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 11:35:32 by jbadia            #+#    #+#             */
-/*   Updated: 2022/04/26 09:36:17 by jbadia           ###   ########.fr       */
+/*   Updated: 2022/04/27 17:35:32 by jbadia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,11 @@ void ScavTrap::guardGate(void)
 
 void ScavTrap::attack(const std::string &target)
 {
-	std::cout << BLU "ScavTrap ";
-	ClapTrap::attack(target);
+	 if (_energyPoint > 0)
+    {
+        std::cout << "ScavTrap " << BLU << _name << " attacks " << target << " causing " << _attackDamage << " points of damage" NC << std::endl;
+        _energyPoint--;
+    }
+    else
+    	std::cout << RED << _name << " n'a plus d'énergie, il ne peut plus attaquer !" NC << std::endl;
 }

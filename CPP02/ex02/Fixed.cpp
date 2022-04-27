@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jbadia <jbadia@student.42.fr>              +#+  +:+       +#+        */
+/*   By: jbadia <jbadia@student.42quebec.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/21 11:10:17 by jbadia            #+#    #+#             */
-/*   Updated: 2022/04/26 08:37:27 by jbadia           ###   ########.fr       */
+/*   Updated: 2022/04/27 16:32:35 by jbadia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
-#include <stdio.h>
 
 const int Fixed::_bits = 8;
 
@@ -73,23 +72,17 @@ Fixed Fixed::operator-(Fixed const &rhs)
 Fixed Fixed::operator*(Fixed const &rhs)
 {
 	Fixed result;
-	int tmp;
 	
-	// result = this->toFloat() * rhs.toFloat();
-	// result.toFloat();
-	tmp = this->getRawBits() * rhs.getRawBits();
-	result.setRawBits(tmp >> 8);
+	result = this->toFloat() * rhs.toFloat();
+	result.toFloat();
 	return ((result));
 }
 
 Fixed	Fixed::operator/(Fixed const &rhs)
 {
 	Fixed result;
-	//int tmp;
 
 	result = this->toFloat() / rhs.toFloat();
-	// tmp = (this->getRawBits() << 8) / rhs.getRawBits();
-	// result.setRawBits(tmp);
 	result.toFloat();
 	return (result);
 }
@@ -215,7 +208,7 @@ void Fixed::setRawBits(int const raw)
 std::ostream    &operator<<(std::ostream &o, Fixed const &nb)
 {
     o << nb.toFloat();
-    return (o); //on retourne la référence sur o pour pouvoir chainer des flux de redirection
+    return (o);
 }
 
 float	Fixed::toFloat() const

@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: jbadia <jbadia@student.42.fr>              +#+  +:+       +#+         #
+#    By: jbadia <jbadia@student.42quebec.com>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/25 15:53:13 by jbadia            #+#    #+#              #
-#    Updated: 2022/04/26 08:16:35 by jbadia           ###   ########.fr        #
+#    Updated: 2022/04/27 17:25:24 by jbadia           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ CGREEN2  = \033[92m
 
 NAME = DiamondTrap
 
-CC = clang++
+CC = c++
 FLAGS = -Wall -Wextra -Werror -std=c++98
 RM = rm -rf
 OBJ = obj

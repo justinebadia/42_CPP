@@ -55,18 +55,18 @@ void    ClapTrap::attack(const std::string &target)
 {
     if (_energyPoint > 0)
     {
-        std::cout << BLU << _name << " attacks " << target << " causing " << _attackDamage << " points of damage" NC << std::endl;
+        std::cout << BLU "Clap Trap " << _name << " attacks " << target << " causing " << _attackDamage << " points of damage" NC << std::endl;
         _energyPoint--;
     }
     else
-    	std::cout << RED << _name << " n'a plus d'énergie, il ne peut plus attaquer !" NC << std::endl;
+    	std::cout << RED "Clap Trap " << _name << " n'a plus d'énergie, il ne peut plus attaquer !" NC << std::endl;
 }
 
 void    ClapTrap::takeDamage(unsigned int amount)
 {
     _energyPoint -= amount;
 	if (_energyPoint > 0)
-    	std::cout << RED << _name << " se fait attaquer. Il ne lui reste plus que " << _energyPoint << " de vie." NC << std::endl;
+    	std::cout << RED << _name << " se fait attaquer de " << amount << ". Il ne lui reste plus que " << _energyPoint << " de vie." NC << std::endl;
 	else
 		std::cout << RED << _name << " prend " << amount << " de dégats. Il se meurt." NC << std::endl;	
 }
@@ -76,8 +76,6 @@ void    ClapTrap::beRepaired(unsigned int amount)
 	if (_energyPoint > 0)
 	{
 		_energyPoint += (amount - 1);
-		if (_energyPoint > 10)
-			_energyPoint = 10;
 		std::cout << CYN << _name << " se répare de " << amount << ". Il a maintenant " << _energyPoint << " de vie." NC << std::endl;
 	}
 	else

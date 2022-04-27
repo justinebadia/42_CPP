@@ -6,7 +6,7 @@
 /*   By: jbadia <jbadia@student.42quebec.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/23 13:22:00 by jbadia            #+#    #+#             */
-/*   Updated: 2022/04/25 15:51:16 by jbadia           ###   ########.fr       */
+/*   Updated: 2022/04/27 17:15:29 by jbadia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 int main (void)
 {
-
 	std::cout << GRN "----- SCAVTRAP ----- \n" << std::endl << " --- CLAPPY --- " NC<< std::endl;
 	ScavTrap Clappy;
 	std::cout << std::endl << GRN " --- CLOPETTE ---" NC << std::endl;
@@ -26,6 +25,7 @@ int main (void)
 	Clappy.takeDamage(30);
 	Clopette.takeDamage(50);
 	Clopette.guardGate();
+	Clopette.attack("Beau Jack");
 	Clappy.beRepaired(10);
 
 	std::cout << std::endl << GRN "----- CLAPTRAP ----- " NC << std::endl;
