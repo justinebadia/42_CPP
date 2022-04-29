@@ -6,7 +6,7 @@
 /*   By: jbadia <jbadia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 07:46:25 by jbadia            #+#    #+#             */
-/*   Updated: 2022/04/29 15:04:20 by jbadia           ###   ########.fr       */
+/*   Updated: 2022/04/29 15:22:13 by jbadia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,22 +17,15 @@
 #include "WrongCat.hpp"
 #include "Brain.hpp"
 
-#define N 10
+/*Une classe abstraite existe pour être héritée. Pour être abstraite, elle
+doit contenir au moins une fonction virtuelle pure. Il est impossible d'instancier
+un objet à partir d'une classe abstraite. DOonc les classes héritant d'une classe
+abstraite doivent obligatoirement définir elles-mêmes les fonctions virtuelles pures */
 
 int main(void)
 {
-    Animal *animalTab = new Animal[N];
-
-    for (int i = N - 1; i > 0 ; i--)
-    {
-        if (i % 2 == 0)
-            animalTab[i] = Cat();
-        else
-            animalTab[i] = Dog();
-    }
-    const Animal* j = new Dog();
-    const Animal* i = new Cat();
-
+    //Animal erreur;
+    
     std::cout << RED "---------- CATS ---------\n" NC << std::endl;
     Cat kitty;
     Cat kat;
@@ -50,9 +43,5 @@ int main(void)
     dog.printIdea();
     doggo = dog;
     doggo.printIdea();
-
-    delete j;
-    delete i;
-    delete[] animalTab;
     return 0;
 }

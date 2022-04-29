@@ -1,50 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongAnimal.cpp                                         :+:      :+:    :+:   */
+/*   Animal.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jbadia <jbadia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 07:46:20 by jbadia            #+#    #+#             */
-/*   Updated: 2022/04/26 10:28:47 by jbadia           ###   ########.fr       */
+/*   Updated: 2022/04/29 15:44:36 by jbadia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "WrongAnimal.hpp"
+#include "Animal.hpp"
 
-WrongAnimal::WrongAnimal()
+Animal::Animal()
 {
-    this->_type = "WrongAnimal";
+    this->_type = "Animal";
     std::cout << GRN << _type << " a été construit." NC << std::endl;
     return ;
 }
 
-WrongAnimal::WrongAnimal(WrongAnimal const &src)
+Animal::Animal(Animal const &src)
 {
     *this = src;
     std::cout << GRN << _type << " constructeur de recopie." NC << std::endl;
     return ;
 }
 
-WrongAnimal::~WrongAnimal()
+Animal::~Animal()
 {
     std::cout << GRN << _type << " a été détruit." NC << std::endl;
     return ;
 }
 
-WrongAnimal &WrongAnimal::operator=(WrongAnimal const &rhs)
+Animal &Animal::operator=(Animal const &rhs)
 {
     if(this != &rhs)
         this->_type = rhs._type;
     return *this;
 }
 
-void WrongAnimal::makeSound(void) const
-{
-    std::cout << GRN << _type << ": Coin coin !" NC << std::endl;
-}
-
-std::string WrongAnimal::getType(void) const
+std::string Animal::getType(void) const
 {
     return _type;
 }

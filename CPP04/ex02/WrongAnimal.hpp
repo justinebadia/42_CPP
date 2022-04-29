@@ -1,22 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   WrongAnimal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jbadia <jbadia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 07:46:22 by jbadia            #+#    #+#             */
-/*   Updated: 2022/04/29 15:40:22 by jbadia           ###   ########.fr       */
+/*   Updated: 2022/04/26 10:28:34 by jbadia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-#define ANIMAL_HPP
-
-/*pour pouvoir détruire les différents objets, il faut que
- la fonction de destruction de l'objet (celle qui appellera delete) puisse accéder au destructeur du type de base et que
-le compilateur se rend compte qu'il devra adapter le comportement du destructeur du type de base au type réel de l'objet
-Le (1) implique que le destructeur doit être public, le (2) implique que le destructeur doit être virtuel.*/
+#ifndef WRONGANIMAL_HPP
+#define WRONGANIMAL_HPP
 
 #define RED "\e[0;31m"
 #define GRN "\e[0;32m"
@@ -27,16 +22,16 @@ Le (1) implique que le destructeur doit être public, le (2) implique que le des
 
 #include <iostream>
 
-class Animal
+class WrongAnimal
 {
     public:
-    Animal();
-    Animal(Animal const &src);
-    virtual ~Animal();
+    WrongAnimal();
+    virtual ~WrongAnimal();
+    WrongAnimal(WrongAnimal const &src);
     
-    Animal &operator=(Animal const &rhs);
+    WrongAnimal &operator=(WrongAnimal const &rhs);
 
-    virtual void makeSound(void) const;
+    void makeSound(void) const;
     virtual std::string getType(void) const;
     
     protected:

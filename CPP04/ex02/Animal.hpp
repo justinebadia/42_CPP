@@ -6,7 +6,7 @@
 /*   By: jbadia <jbadia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 07:46:22 by jbadia            #+#    #+#             */
-/*   Updated: 2022/04/29 15:40:22 by jbadia           ###   ########.fr       */
+/*   Updated: 2022/04/29 15:44:42 by jbadia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ class Animal
     
     Animal &operator=(Animal const &rhs);
 
-    virtual void makeSound(void) const;
+    virtual void makeSound(void) const = 0;
     virtual std::string getType(void) const;
     
     protected:

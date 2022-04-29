@@ -1,70 +1,51 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*   WrongCat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jbadia <jbadia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 08:02:07 by jbadia            #+#    #+#             */
-/*   Updated: 2022/04/29 14:59:09 by jbadia           ###   ########.fr       */
+/*   Updated: 2022/04/26 10:30:03 by jbadia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.hpp"
+#include "WrongCat.hpp"
 #include <iostream>
 
-Cat::Cat() : Animal()
+WrongCat::WrongCat() : WrongAnimal()
 {
-    this->_type = "Cat";
-    _catBrain = new Brain();
+    this->_type = "WrongCat";
     std::cout << VIO << _type << " a été construit." NC << std::endl;
     return ;
 }
 
-Cat::~Cat()
+WrongCat::~WrongCat()
 {
-    delete _catBrain;
     std::cout << VIO << _type << " a été détruit." NC << std::endl;
 }
 
-//https://en.wikipedia.org/wiki/Object_copying#Shallow_copy 
-Cat::Cat(Cat const &src) : Animal(src)
+WrongCat::WrongCat(WrongCat const &src) : WrongAnimal(src)
 {
-    _catBrain = new Brain(*(src._catBrain));
-    _type = src._type;
+    *this = src;
     std::cout << VIO << _type << " constructeur de recopie." NC << std::endl;
     return ;
 }
 
-Cat &Cat::operator=(Cat const &rhs)
+WrongCat &WrongCat::operator=(WrongCat const &rhs)
 {
     if (this != &rhs)
-    {
         this->_type = rhs._type;
-        delete _catBrain;
-        this->_catBrain = new Brain(*rhs._catBrain);
-    }
     return *this;
 }
 
 
-void Cat::makeSound(void) const
+void WrongCat::makeSound(void) const
 {
-    std::cout << VIO << _type << ": Miaouu Miaouu !" NC << std::endl;
+    std::cout << VIO << _type << ": Miaouuss Miaouuss !" NC << std::endl;
 }
 
-std::string Cat::getType(void) const
+std::string WrongCat::getType(void) const
 {
-    return Animal::getType();
-}
-
-void Cat::printIdea(void) const
-{
-     for (int i = 0; i < 100; i++)
-        std::cout << RED "Idea " << i << ": " << _catBrain->getIdea(i) << NC << std::endl;
-}
-
-Brain *Cat::getBrain(void)
-{
-    return (_catBrain);
+    return WrongAnimal::getType();
 }

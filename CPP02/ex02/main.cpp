@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jbadia <jbadia@student.42quebec.com>       +#+  +:+       +#+        */
+/*   By: jbadia <jbadia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/21 11:16:14 by jbadia            #+#    #+#             */
-/*   Updated: 2022/04/27 16:31:39 by jbadia           ###   ########.fr       */
+/*   Updated: 2022/04/28 13:34:04 by jbadia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,8 +54,5 @@ int main (void)
 		std::cout << BLU "c est <= equal1\n";
 	if (c != d)
 		std::cout << BLU "c et d ne sont pas éguaux\n";
-
-
-
     return 0;
 }

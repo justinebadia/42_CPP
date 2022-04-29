@@ -8,7 +8,7 @@
 			"type": "lldb",
 			"request": "launch",
 			"name": "Debug",
-			"program": "/Users/justine/Documents/dev/CPP/CPP03/ex00/ClapTrap",
+			"program": "/Users/jbadia/Documents/42_Cursus/42_CPP/CPP04/ex01/ex01",
 			"args": [],
 			"cwd": "${workspaceFolder}"
 		}

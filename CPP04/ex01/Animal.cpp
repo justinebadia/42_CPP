@@ -6,13 +6,11 @@
 /*   By: jbadia <jbadia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 07:46:20 by jbadia            #+#    #+#             */
-/*   Updated: 2022/04/26 10:28:47 by jbadia           ###   ########.fr       */
+/*   Updated: 2022/04/29 15:40:33 by jbadia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
-#include <iostream> 
-
 
 Animal::Animal()
 {
