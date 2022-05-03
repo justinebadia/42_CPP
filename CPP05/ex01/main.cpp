@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jbadia <jbadia@student.42quebec.com>       +#+  +:+       +#+        */
+/*   By: jbadia <jbadia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/02 10:03:32 by jbadia            #+#    #+#             */
-/*   Updated: 2022/05/02 18:14:44 by jbadia           ###   ########.fr       */
+/*   Updated: 2022/05/03 11:45:17 by jbadia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ int main (void)
 	Bureaucrat Dave("Dave ", 150);
 	Bureaucrat Ted;
 	Bureaucrat Tod("Tod ", 50);
+	Bureaucrat &Tod2(Tod);
 
 	std::cout << std::endl;
 	std::cout << Bob;
@@ -29,9 +30,14 @@ int main (void)
 	std::cout << std::endl;
 
 	std::cout << " -------- EXCEPTIONS -------- \n";
-	Form form("C23", 12, 34);
+	Form form("C23", 12, 340);
+	Form form2("AA", 155, 3);
+	
 	std::cout << form;
-	form.beSigned(Tod);
+	std::cout << form2;
+
+	std::cout << Tod2;
+	form.beSigned(Tod2);
 
 	Bureaucrat Chonchon ("Chonchon", 153);
 	std::cout << Chonchon;

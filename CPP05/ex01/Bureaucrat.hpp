@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jbadia <jbadia@student.42quebec.com>       +#+  +:+       +#+        */
+/*   By: jbadia <jbadia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/02 09:21:42 by jbadia            #+#    #+#             */
-/*   Updated: 2022/05/02 14:23:49 by jbadia           ###   ########.fr       */
+/*   Updated: 2022/05/03 09:07:42 by jbadia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,8 +57,8 @@ d'exceptions.*/
 	private:
 		const std::string 	_name;
 		unsigned int		_grade;
-		
-		void handleException(void);
+
+		void 	handleException(void);
 };
 
 std::ostream	&operator<<(std::ostream &o, Bureaucrat const &rhs);
