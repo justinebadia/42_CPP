@@ -6,7 +6,7 @@
 /*   By: jbadia <jbadia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 07:46:25 by jbadia            #+#    #+#             */
-/*   Updated: 2022/04/26 11:07:21 by jbadia           ###   ########.fr       */
+/*   Updated: 2022/05/04 15:33:17 by jbadia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,11 +40,13 @@ int main(void)
     std::cout << std::endl <<RED "---- WRONG ----\n" NC ;
     std::cout <<RED "---- CONSTRUCTEUR ----\n" NC ;
     WrongAnimal canard;
+    WrongCat    miaouss;
     const WrongAnimal *kat = new WrongCat();
 
     std::cout << std::endl <<RED "---- SOUND ----\n" NC ;
     kat->makeSound();
     canard.makeSound();
+    miaouss.makeSound();
 
     std::cout << std::endl <<RED "---- TYPES ----\n" NC ;
     std::cout << VIO "Kat est de type " << kat->getType() << " " NC << std::endl;

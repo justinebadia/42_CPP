@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jbadia <jbadia@student.42quebec.com>       +#+  +:+       +#+        */
+/*   By: jbadia <jbadia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/02 10:03:32 by jbadia            #+#    #+#             */
-/*   Updated: 2022/05/02 14:20:48 by jbadia           ###   ########.fr       */
+/*   Updated: 2022/05/04 12:24:48 by jbadia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,36 +14,74 @@
 
 int main (void)
 {
-	std::cout << " -------- NORMAUX -------- \n";
-	Bureaucrat Bob("Bob", 1);
-	Bureaucrat Dave("Dave ", 150);
-	Bureaucrat Ted;
-	Bureaucrat Tod("Tod ", 50);
+	std::cout << "\n -------- BOB -------- \n";
+	try
+	{
+		Bureaucrat Bob("Bob", 1);
+		std::cout << Bob;
+		Bob.grade();
+		std::cout << Bob;
 
-	std::cout << std::endl;
-	std::cout << Bob;
-	std::cout << Dave;
-	std::cout << Ted;
-	std::cout << Tod;
-	std::cout << std::endl;
-
-	std::cout << " -------- EXCEPTIONS -------- \n";
-	Bob.grade();
-	std::cout << Bob;
-	Dave.degrade();
-	std::cout << Dave;
-	Tod.grade();
-	std::cout << Tod;
-	Tod.degrade();
-	std::cout << Tod;
-
-	Bureaucrat Chonchon ("Chonchon", 153);
-	std::cout << Chonchon;
-	Bureaucrat Chonchette ("Chonchette", 0);
-	std::cout << Chonchette;
+	}
+	catch (const std::exception &e)
+	{
+		std::cout << RED << e.what() << NC << std::endl;
+	}
 	
-	std::cout << std::endl;
-	std::cout << " -------- DESTRUCTEURS -------- \n";
+	
+	std::cout << "\n -------- DAVE -------- \n";
+	try
+	{
+		Bureaucrat Dave("Dave ", 150);
+		std::cout << Dave;
+		Dave.degrade();
+		std::cout << Dave;
+	}
+	catch (const std::exception &e)
+	{
+		std::cout << RED << e.what() << NC << std::endl;
+	}
 
+		
+	std::cout << "\n -------- Tod -------- \n";
+	try
+	{
+		Bureaucrat Tod("Tod ", 50);
+		std::cout << Tod;
+		Tod.degrade();
+		std::cout << Tod;
+		Tod.grade();
+		std::cout << Tod;
+	}
+	catch (const std::exception &e)
+	{
+		std::cout << RED << e.what() << NC << std::endl;
+	}
+
+
+	std::cout << "\n -------- CHONCHON -------- \n";
+	try
+	{
+		Bureaucrat Chonchon ("Chonchon", 153);
+		std::cout << Chonchon;
+		Bureaucrat Chonchette ("Chonchette", 0);
+		std::cout << Chonchette;
+	}
+	catch (const std::exception &e)
+	{
+		std::cout << RED << e.what() << NC << std::endl;
+	}
+
+		std::cout << "\n -------- CHONCHETTE -------- \n";
+	try
+	{
+		Bureaucrat Chonchette ("Chonchette", 0);
+		std::cout << Chonchette;
+	}
+	catch (const std::exception &e)
+	{
+		std::cout << RED << e.what() << NC << std::endl;
+	}
+	
 	return 0;
 }

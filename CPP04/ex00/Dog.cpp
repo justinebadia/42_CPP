@@ -6,7 +6,7 @@
 /*   By: jbadia <jbadia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 08:51:11 by jbadia            #+#    #+#             */
-/*   Updated: 2022/04/26 10:30:01 by jbadia           ###   ########.fr       */
+/*   Updated: 2022/05/04 15:31:30 by jbadia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,6 @@ Dog &Dog::operator=(Dog const &rhs)
         this->_type = rhs._type;
     return *this;
 }
-
 
 void Dog::makeSound(void) const
 {

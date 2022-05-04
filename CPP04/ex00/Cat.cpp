@@ -6,7 +6,7 @@
 /*   By: jbadia <jbadia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 08:02:07 by jbadia            #+#    #+#             */
-/*   Updated: 2022/04/26 10:30:03 by jbadia           ###   ########.fr       */
+/*   Updated: 2022/05/04 15:31:18 by jbadia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,6 @@ Cat &Cat::operator=(Cat const &rhs)
         this->_type = rhs._type;
     return *this;
 }
-
 
 void Cat::makeSound(void) const
 {

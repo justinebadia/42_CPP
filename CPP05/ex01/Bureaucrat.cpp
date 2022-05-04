@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jbadia <jbadia@student.42quebec.com>       +#+  +:+       +#+        */
+/*   By: jbadia <jbadia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/02 09:21:44 by jbadia            #+#    #+#             */
-/*   Updated: 2022/05/02 14:23:35 by jbadia           ###   ########.fr       */
+/*   Updated: 2022/05/04 17:18:16 by jbadia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,45 +59,48 @@ unsigned int Bureaucrat::getGrade(void) const
 void Bureaucrat::grade(void)
 {
 	this->_grade--;
+	std::cout << GRN "Promote " << _name << " to grade " BLU << _grade << GRN " ?\n" << NC;
 	Bureaucrat::handleException();
 }
 
 void Bureaucrat::degrade(void)
 {
 	this->_grade++;
+	std::cout << GRN "Degrade " << _name << " to grade " BLU << _grade << GRN " ?\n" << NC;
 	Bureaucrat::handleException();
 }
 
 const char* Bureaucrat::GradeTooHighException::what() const throw()
 {
-	return " Grade too high !";
+	return "Grade too high !";
 }
 
 const char* Bureaucrat::GradeTooLowException::what() const throw()
 {
-	return " Grade too low !";
+	return "Grade too low !";
 }
 
 void Bureaucrat::handleException(void)
 {
-	try
-	{
 		if (this->_grade > 150)
-		{
-			this->_grade = 150;
 			throw GradeTooLowException();
-		}
 		else if (this->_grade < 1)
-		{
-			this->_grade = 1;
 			throw GradeTooHighException();
-		}
-	}
-	catch(const std::exception &e)
-	{
-		std::cout << RED <<  _name << e.what() << NC << std::endl;
-	}
 	return ;
+}
+
+void Bureaucrat::signForm(Form &f)
+{
+	if(this->_grade >= f.getSignGrade())
+	{
+		std::cout << CYN << _name << " ne peut pas signer le formulaire car son grade est seulement de " << _grade << NC << std::endl;
+		throw GradeTooLowException();
+	}
+	else
+	{
+		f.beSigned(*this);
+		std::cout << CYN << _name << " a signé le formulaire " << f.getName() << NC << std::endl;
+	}
 }
 
 std::ostream &operator<<(std::ostream &o, Bureaucrat const &rhs)

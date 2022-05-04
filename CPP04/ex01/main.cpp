@@ -6,7 +6,7 @@
 /*   By: jbadia <jbadia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 07:46:25 by jbadia            #+#    #+#             */
-/*   Updated: 2022/04/29 15:04:20 by jbadia           ###   ########.fr       */
+/*   Updated: 2022/05/04 14:29:31 by jbadia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,10 +36,11 @@ int main(void)
     std::cout << RED "---------- CATS ---------\n" NC << std::endl;
     Cat kitty;
     Cat kat;
+    
     std::cout << RED "---------- CAT IDEAS ---------" NC << std::endl;
     kitty.getBrain()->setIdea("Miaou");
     kitty.printIdea();
-    kat = kitty;
+    kat=kitty;
     kat.printIdea();
 
     std::cout << RED "---------- DOGS ---------\n" NC << std::endl;

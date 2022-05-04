@@ -6,7 +6,7 @@
 /*   By: jbadia <jbadia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/02 14:31:13 by jbadia            #+#    #+#             */
-/*   Updated: 2022/05/03 11:40:33 by jbadia           ###   ########.fr       */
+/*   Updated: 2022/05/04 14:56:24 by jbadia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,15 @@
 Form::Form(std::string name, unsigned int gradeSign, unsigned int gradeExec) : 
 		_name(name), _signed(false), _gradeSign(gradeSign), _gradeExec(gradeExec)
 {
+    std::cout << VIO << _name << " constructeur. " << "Grade de signature : " BLU << _gradeSign 
+	<< VIO " et grade d'exécution : " BLU << _gradeExec << NC << std::endl;
 	Form::handleGradeException(_gradeSign);
 	Form::handleGradeException(_gradeExec);
 	return ;
 }
 
 Form::Form() : _name("Form A4"), _signed(false),  _gradeSign(150), _gradeExec(150)
-{
-
-}
+{}
 
 Form::~Form()
 {}
@@ -76,33 +76,19 @@ const char* Form::GradeTooLowException::what() const throw()
 
 void	Form::beSigned(Bureaucrat &b)
 {
-	try
-	{
-		if (b.getGrade() > this->_gradeSign || b.getGrade() > this->_gradeExec)
+
+		if (b.getGrade() > this->_gradeSign)
 			throw GradeTooLowException();
-		else if (b.getGrade() <= this->_gradeSign || b.getGrade() <= this->_gradeExec)
+		else if (b.getGrade() <= this->_gradeSign)
 			this->_signed = true;
-	}
-	catch(const std::exception &e)
-	{
-		std::cout << REDB <<  _name << e.what() << NC << std::endl;
-	}
-	
 }
 
 void Form::handleGradeException(unsigned int grade)
 {
-	try
-	{
 		if (grade > 150)
 			throw GradeTooLowException();
 		else if ( grade < 1)
 			throw GradeTooHighException();
-	}
-	catch(const std::exception& e)
-	{
-		std::cout << REDB <<  _name << e.what() << NC << std::endl;
-	}
 	return ;
 }
 

@@ -6,7 +6,7 @@
 /*   By: jbadia <jbadia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/02 09:21:42 by jbadia            #+#    #+#             */
-/*   Updated: 2022/05/03 09:07:42 by jbadia           ###   ########.fr       */
+/*   Updated: 2022/05/04 17:09:17 by jbadia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,10 @@
 #include <iostream>
 #include <exception>
 
+#include "Form.hpp"
+
+class Form;
+
 class Bureaucrat
 {
 	public:
@@ -38,6 +42,8 @@ class Bureaucrat
 		unsigned int	getGrade(void) const;
 		void 			grade(void);
 		void 			degrade(void);
+		void			signForm(Form &f);
+		
 
 	/*Les méthodes de la classe sont suivies du mot clé throw.
 Il sert à indiquer que ces méthodes ne vont pas lancer 

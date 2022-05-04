@@ -6,7 +6,7 @@
 /*   By: jbadia <jbadia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/02 14:31:11 by jbadia            #+#    #+#             */
-/*   Updated: 2022/05/03 09:28:33 by jbadia           ###   ########.fr       */
+/*   Updated: 2022/05/04 17:07:24 by jbadia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@
 #include <exception>
 #include "Bureaucrat.hpp"
 
+
+class Bureaucrat;
 
 class Form
 {
