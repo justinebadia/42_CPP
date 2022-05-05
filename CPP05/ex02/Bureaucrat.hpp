@@ -6,7 +6,7 @@
 /*   By: jbadia <jbadia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/02 09:21:42 by jbadia            #+#    #+#             */
-/*   Updated: 2022/05/05 08:32:14 by jbadia           ###   ########.fr       */
+/*   Updated: 2022/05/05 16:43:10 by jbadia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ class Bureaucrat
 		void 			grade(void);
 		void 			degrade(void);
 		void			signForm(Form &f);
+		void			executeForm(Form const &f);
 		
 
 	/*Les méthodes de la classe sont suivies du mot clé throw.
