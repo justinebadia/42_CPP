@@ -1,33 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ShrubberyCreationForm.hpp                          :+:      :+:    :+:   */
+/*   RobotomyRequestForm.hpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jbadia <jbadia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/05 09:45:18 by jbadia            #+#    #+#             */
-/*   Updated: 2022/05/06 08:18:33 by jbadia           ###   ########.fr       */
+/*   Created: 2022/05/05 09:42:18 by jbadia            #+#    #+#             */
+/*   Updated: 2022/05/05 16:37:22 by jbadia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SHRUBBERY_CREATION_FORM
-#define SHRUBBERY_CREATION_FORM
+#ifndef ROBOTOMY_REQUEST_FORM
+#define ROBOTOMY_REQUEST_FORM
 
 #include "Form.hpp"
 
-class ShrubberyCreationForm : public Form
+class RobotomyRequestForm : public Form
 {
     public:
-        ShrubberyCreationForm();
-        ShrubberyCreationForm(std::string target);
-        virtual ~ShrubberyCreationForm();
-        ShrubberyCreationForm(ShrubberyCreationForm const &copy);
+        RobotomyRequestForm();
+        RobotomyRequestForm(std::string target);
+        virtual  ~RobotomyRequestForm();
+        RobotomyRequestForm(RobotomyRequestForm const &copy);
 
-        ShrubberyCreationForm &operator=(ShrubberyCreationForm const &rhs);
+        RobotomyRequestForm &operator= (RobotomyRequestForm const &rhs);
         void 			beSigned(Bureaucrat &b);
-        void	    execute(Bureaucrat const &executor) const;
-        
-      
+        void	execute(Bureaucrat const &executor) const;
+
+    private:
 };
 
 

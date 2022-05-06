@@ -6,7 +6,7 @@
 /*   By: jbadia <jbadia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 09:45:18 by jbadia            #+#    #+#             */
-/*   Updated: 2022/05/06 08:18:33 by jbadia           ###   ########.fr       */
+/*   Updated: 2022/05/06 12:46:43 by jbadia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,9 @@ class ShrubberyCreationForm : public Form
 
         ShrubberyCreationForm &operator=(ShrubberyCreationForm const &rhs);
         void 			beSigned(Bureaucrat &b);
-        void	    execute(Bureaucrat const &executor) const;
-        
+        void	        execute(Bureaucrat const &executor) const;
       
+        
 };
 
 

@@ -8,7 +8,7 @@
 			"type": "lldb",
 			"request": "launch",
 			"name": "Debug",
-			"program": "/Users/jbadia/Documents/42_Cursus/42_CPP/CPP05/ex01/Bureaucrat",
+			"program": "/Users/jbadia/Documents/42_Cursus/42_CPP/CPP05/ex03/Bureaucrat",
 			"args": [],
 			"cwd": "${workspaceFolder}"
 		}

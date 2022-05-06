@@ -6,7 +6,7 @@
 /*   By: jbadia <jbadia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 09:45:16 by jbadia            #+#    #+#             */
-/*   Updated: 2022/05/06 08:13:18 by jbadia           ###   ########.fr       */
+/*   Updated: 2022/05/06 12:46:19 by jbadia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,3 +56,4 @@ void ShrubberyCreationForm::execute(Bureaucrat const &executor) const
     }
     file << tree;
 }
+
