@@ -8,8 +8,8 @@
 			"type": "lldb",
 			"request": "launch",
 			"name": "Debug",
-			"program": "/Users/jbadia/Documents/42_Cursus/42_CPP/CPP05/ex03/Bureaucrat",
-			"args": [],
+			"program": "/Users/justine/Documents/dev/42_CPP/CPP06/ex00/convert",
+			"args": ["12.2"],
 			"cwd": "${workspaceFolder}"
 		}
 	]

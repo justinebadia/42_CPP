@@ -6,7 +6,7 @@
 /*   By: jbadia <jbadia@student.42quebec.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 19:37:01 by jbadia            #+#    #+#             */
-/*   Updated: 2022/05/23 19:44:54 by jbadia           ###   ########.fr       */
+/*   Updated: 2022/05/30 16:21:59 by jbadia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,30 @@ class Convert
 {
 	public:
 	Convert();
+	Convert(std::string str);
 	~Convert();
 	Convert(Convert const &copy);
 	
 	Convert &operator=(Convert const &rhs);
+	enum 	e_type {isChar, isInt, isFloat, isDouble, isWrong};
+	void	convertData();
+	void	print_Data();
 
 	private:
+		e_type _array[5];
+		char 		_c;
+		int	 		_int;
+		float		_float;
+		double		_db;
+		std::string _str;
+		e_type 		_type;
+
+	void	getChar();
+	void	getInt();
+	void 	getFloat();
+	void 	getDouble();
+	e_type	getType();
+
 };
 
 #endif

@@ -6,19 +6,19 @@
 #    By: jbadia <jbadia@student.42quebec.com>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/23 19:34:43 by jbadia            #+#    #+#              #
-#    Updated: 2022/05/23 19:35:28 by jbadia           ###   ########.fr        #
+#    Updated: 2022/05/30 16:29:08 by jbadia           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = convert
 
 CC = c++
-FLAGS = -Wall -Wextra -Werror -std=c++98
+FLAGS = -g -Wall -Wextra -std=c++98
 RM = rm -rf
 OBJ = obj
 
-SRC_C = main.cpp 
-HDR_H =  
+SRC_C = main.cpp Convert.cpp
+HDR_H =  Convert.hpp
 
 OBJS = $(addprefix $(OBJ)/, $(SRC_C:.cpp=.o))
 
