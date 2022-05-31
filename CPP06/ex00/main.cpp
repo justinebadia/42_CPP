@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jbadia <jbadia@student.42quebec.com>       +#+  +:+       +#+        */
+/*   By: jbadia <jbadia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 19:28:55 by jbadia            #+#    #+#             */
-/*   Updated: 2022/05/30 16:13:28 by jbadia           ###   ########.fr       */
+/*   Updated: 2022/05/31 10:47:55 by jbadia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,8 @@ int main(int argc, char **argv)
 		std::cout << RED  "Empty string !" NC << std::endl;
 		exit (1);
 	}
-	
 	Convert conversion(argv[1]);
-	conversion.print_Data();
-	conversion.convertData();
-	std::cout << "\naprès\n";
-	conversion.print_Data();
 
+	conversion.convertData();
+	conversion.print_Data();
 }

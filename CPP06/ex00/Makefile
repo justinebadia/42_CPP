@@ -3,17 +3,17 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: jbadia <jbadia@student.42quebec.com>       +#+  +:+       +#+         #
+#    By: jbadia <jbadia@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/23 19:34:43 by jbadia            #+#    #+#              #
-#    Updated: 2022/05/30 16:29:08 by jbadia           ###   ########.fr        #
+#    Updated: 2022/05/31 10:38:28 by jbadia           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = convert
 
 CC = c++
-FLAGS = -g -Wall -Wextra -std=c++98
+FLAGS = -g -Wall -Wextra -Werror -std=c++98
 RM = rm -rf
 OBJ = obj
 

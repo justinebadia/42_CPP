@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Convert.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jbadia <jbadia@student.42quebec.com>       +#+  +:+       +#+        */
+/*   By: jbadia <jbadia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 19:37:01 by jbadia            #+#    #+#             */
-/*   Updated: 2022/05/30 16:21:59 by jbadia           ###   ########.fr       */
+/*   Updated: 2022/05/31 11:00:09 by jbadia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,14 +32,14 @@ class Convert
 	Convert(Convert const &copy);
 	
 	Convert &operator=(Convert const &rhs);
-	enum 	e_type {isChar, isInt, isFloat, isDouble, isWrong};
+	enum 	e_type {isChar, isInt, isFloat, isDouble, isLitt, isWrong};
 	void	convertData();
 	void	print_Data();
 
 	private:
-		e_type _array[5];
+		e_type _array[4];
 		char 		_c;
-		int	 		_int;
+		long	 	_int;
 		float		_float;
 		double		_db;
 		std::string _str;
@@ -50,6 +50,7 @@ class Convert
 	void 	getFloat();
 	void 	getDouble();
 	e_type	getType();
+	bool 	isPseudoLitt();
 
 };
 
