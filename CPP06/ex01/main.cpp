@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jbadia <jbadia@student.42quebec.com>       +#+  +:+       +#+        */
+/*   By: jbadia <jbadia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 09:27:15 by jbadia            #+#    #+#             */
-/*   Updated: 2022/06/01 15:52:23 by jbadia           ###   ########.fr       */
+/*   Updated: 2022/06/03 15:13:04 by jbadia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ uintptr_t serialize(Data *ptr)
 
 Data *deserialize(uintptr_t raw)
 {
-	Data *d = new Data;
+	Data *d;
 
 	std::cout << GRN "Deserialization ...\n" << NC;
 	d = reinterpret_cast<Data *>(raw);
@@ -52,12 +52,8 @@ int main (void)
 	std::cout << "La valeur de _nb est : " VIO << ptr->_nb << NC << std::endl;
 	std::cout << "La valeur de _str est : " VIO << ptr->_str << NC << std::endl;
 	std::cout << "La valeur de _db est : " VIO << ptr->_db << NC << std::endl;
-	
 	uintptr_t test = serialize(ptr);
-	std::cout << ptr << std::endl;
-	std::cout << test << std::endl;
 	Data *ptr1 = deserialize(test);
-
 	std::cout << "La valeur de test devrait être la même que _nb : " VIO << ptr1->_nb << NC << std::endl;
 	std::cout << "La valeur de test devrait être la même que _str : " VIO << ptr1->_str << NC << std::endl;
 	std::cout << "La valeur de test devrait être la même que _db : " VIO << ptr1->_db << NC << std::endl;
