@@ -1,19 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   whatever.hpp                                       :+:      :+:    :+:   */
+/*   iter.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jbadia <jbadia@student.42quebec.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/03 15:20:26 by jbadia            #+#    #+#             */
-/*   Updated: 2022/06/06 10:30:32 by jbadia           ###   ########.fr       */
+/*   Created: 2022/06/06 10:34:51 by jbadia            #+#    #+#             */
+/*   Updated: 2022/06/06 12:52:05 by jbadia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WHATEVER_HPP
-#define WHATEVER_HPP
+#ifndef ITER_HPP
+#define ITER_HPP
 
 #include <iostream>
+#include<cctype>
 
 #define RED "\e[0;31m"
 #define GRN "\e[0;32m"
@@ -23,41 +24,28 @@
 #define NC "\e[0m"
 
 template <typename T>
-void swap(T &a,T &b)
+void iter(T const *tab, int size, void function(const T&))
 {
-	T buffer = a;
-	a = b;
-	b = buffer;
+	for (int i = 0; i < size; i++)
+		function(tab[i]);
 }
 
 template <typename T>
-T const &min(const T &a, const T &b)
+void printer(T &tab)
 {
-	return (a < b ? a : b);
+	std::cout << tab << std::endl;
 }
-
-// template<>
-// std::string const &min<std::string>(const std::string &a, const std::string &b)
-// {
-//   	if (a.size() < b.size())
-//    	 return a;
-//  	 else
-//  	   return b;
-// }
 
 template <typename T>
-T const &max(const T &a, const T &b)
+void add(T &tab)
 {
-	return (a > b ? a : b);
+	std::cout << tab + 2 << std::endl;
 }
 
-// template<>
-// std::string const &max<std::string>(const std::string &a, const std::string &b)
-// {
-//   	if (a.size() > b.size())
-//    	 return a;
-//  	 else
-//  	   return b;
-// }
+template<>
+void add<const std::string>(std::string const &tab)
+{
+	std::cout << tab << " + add" << std::endl;
+} 
 
 #endif

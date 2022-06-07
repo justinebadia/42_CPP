@@ -6,11 +6,11 @@
 #    By: jbadia <jbadia@student.42quebec.com>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/01 09:27:24 by jbadia            #+#    #+#              #
-#    Updated: 2022/06/04 12:29:42 by jbadia           ###   ########.fr        #
+#    Updated: 2022/06/06 10:34:47 by jbadia           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = whatever
+NAME = iter
 
 CC = c++
 FLAGS = -g -Wall -Wextra -Werror -std=c++98
@@ -18,7 +18,7 @@ RM = rm -rf
 OBJ = obj
 
 SRC_C = main.cpp 
-HDR_H = whatever.hpp
+HDR_H = iter.hpp
 
 OBJS = $(addprefix $(OBJ)/, $(SRC_C:.cpp=.o))
 
