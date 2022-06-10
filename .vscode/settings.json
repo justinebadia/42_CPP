@@ -69,6 +69,8 @@
 		"__bits": "cpp",
 		"clocale": "cpp",
 		"compare": "cpp",
-		"concepts": "cpp"
+		"concepts": "cpp",
+		"list": "cpp",
+		"numeric": "cpp"
 	}
 }

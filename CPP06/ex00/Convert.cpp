@@ -6,7 +6,7 @@
 /*   By: jbadia <jbadia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 19:36:57 by jbadia            #+#    #+#             */
-/*   Updated: 2022/05/31 11:05:23 by jbadia           ###   ########.fr       */
+/*   Updated: 2022/06/10 11:54:11 by jbadia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 #include <ctype.h>
 #include <cfloat>
 #include <iomanip>
+#include <cstdlib>
+#include <limits.h>
 
 Convert::Convert(std::string str) : _c('0'), _int(0), _float(0.0f), _db(0.0), _str(str)
 {
@@ -66,7 +68,7 @@ Convert::e_type	Convert::getType(void)
 			break ;
 		if (i == _str.size() - 1)
 		{
-			_int = atol(_str.c_str());
+			_int = atoi(_str.c_str());
 			return isInt;
 		}
 	}
@@ -78,16 +80,15 @@ Convert::e_type	Convert::getType(void)
 				break ;
 		if (_str[i] == 'f' && i == _str.size() - 1)
 		{
-			_float = atof(_str.c_str());	
+			_float = (float)atof(_str.c_str());	
 			return isFloat;
 		}
-		else
+		else if (i == _str.size() - 1)
 		{
 			_db = std::stod(_str.c_str());
 			return isDouble;
 		}
 	}
-	std::cout << "isWrong\n";
 	return isWrong;
 }
 
@@ -128,8 +129,7 @@ void	Convert::convertData(void)
 			_float = static_cast<double>(_db);
 			break ;
 		}
-		default : 
-			std::cout << "ERROR" << std::endl;
+		default :
 			break;
 	}
 }
@@ -145,7 +145,7 @@ void	Convert::print_Data(void)
 bool 	Convert::isPseudoLitt(void)
 {
 	if (_str == "-inff" || _str == "+inff" || _str == "nanf" || _str == "-inf"
-		|| _str == "-inf" || _str == "nan")
+		|| _str == "+inf" || _str == "nan")
 		return true;
 	return false;
 }
@@ -155,7 +155,7 @@ void	Convert::getChar(void)
 	std::cout << "char: ";
 	if (_type == isWrong || _type == isLitt)
 		std::cout << "impossible\n";
-	else if (_c < 32 || _c > 126)
+	else if ((_c < 32 || _c > 126) || (_int < 32 || _int > 126))
 		std::cout << "Non displayable\n";
 	else 
 		std::cout << _c << std::endl;
@@ -168,8 +168,8 @@ void 	Convert::getInt(void)
 		std::cout << "impossible\n";
 	else
 	{
-		long over = atol(_str.c_str());
-		if (over > INT32_MAX || over < INT32_MIN)
+		long int over = atol(_str.c_str());
+		if ((over > INT32_MAX || over < INT32_MIN))
 			std::cout << "overflow\n";
 		else
 			std::cout << _int << std::endl;
@@ -190,11 +190,12 @@ void	Convert::getFloat(void)
 	}
 	else
 	{
-		float over = atof(_str.c_str());
-		if (over > FLT_MAX || over < FLT_MIN)
-			std::cout << "overflow\n";
-		else
-			std::cout << std::fixed << std::setprecision(1) << _float << "f" << std::endl;
+		if (_type == isInt || _type == isDouble)
+		{
+			float over = (float)atof(_str.c_str());
+			_float = over;
+		}
+		std::cout << std::fixed << std::setprecision(1) << _float << "f" << std::endl;
 	}
 }
 
@@ -212,10 +213,11 @@ void 	Convert::getDouble(void)
 	}
 	else
 	{
-		float over = atof(_str.c_str());
-		if (over > DBL_MAX || over < DBL_MIN)
-			std::cout << "overflow\n";
-		else
-			std::cout << std::fixed << std::setprecision(1) << _db << std::endl;
+		if (_type == isInt || _type == isFloat)
+		{
+			float over = (float)atof(_str.c_str());
+			_db = (double)over;
+		}
+		std::cout << std::fixed << std::setprecision(1) << _db << std::endl;
 	}
 }

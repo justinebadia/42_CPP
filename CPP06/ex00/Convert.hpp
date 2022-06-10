@@ -6,7 +6,7 @@
 /*   By: jbadia <jbadia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 19:37:01 by jbadia            #+#    #+#             */
-/*   Updated: 2022/05/31 11:00:09 by jbadia           ###   ########.fr       */
+/*   Updated: 2022/06/10 11:35:03 by jbadia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ class Convert
 	private:
 		e_type _array[4];
 		char 		_c;
-		long	 	_int;
+		int	 	_int;
 		float		_float;
 		double		_db;
 		std::string _str;

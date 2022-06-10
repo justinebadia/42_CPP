@@ -6,19 +6,19 @@
 #    By: jbadia <jbadia@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/01 09:27:24 by jbadia            #+#    #+#              #
-#    Updated: 2022/06/10 11:59:07 by jbadia           ###   ########.fr        #
+#    Updated: 2022/06/10 13:51:51 by jbadia           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = base
+NAME = span
 
 CC = c++
 FLAGS = -g -Wall -Wextra -Werror -std=c++98
 RM = rm -rf 
 OBJ = obj
 
-SRC_C = main.cpp Base.cpp
-HDR_H = A.hpp B.hpp C.hpp Base.hpp
+SRC_C = main.cpp Span.cpp
+HDR_H = Span.hpp
 
 OBJS = $(addprefix $(OBJ)/, $(SRC_C:.cpp=.o))
 
