@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Span.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jbadia <jbadia@student.42.fr>              +#+  +:+       +#+        */
+/*   By: jbadia <jbadia@student.42quebec.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/10 13:52:05 by jbadia            #+#    #+#             */
-/*   Updated: 2022/06/10 15:21:07 by jbadia           ###   ########.fr       */
+/*   Updated: 2022/06/14 10:10:15 by jbadia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,22 +33,25 @@ class Span
     Span &operator=(Span const &rhs);
     
     void addNumber(int number);
-    std::vector<int>::iterator shortestSpan();
+	void addNumber(std::vector<int>::iterator ifirst, std::vector<int>::iterator ilast, std::vector<int> tab);
+    int shortestSpan();
     int longestSpan();
 
     private:
         unsigned int _n;
-        unsigned int _count;
         std::vector <int>_span;
     
     class fullException : public std::exception
     {
         public: 
-            virtual const char* what() const throw()
-            {
-                return "No more place !";
-            }
+            virtual const char* what() const throw();
     };
+
+	class noDistance : public std::exception
+	{
+		 public: 
+            virtual const char* what() const throw();
+	};
 };
 
 #endif
