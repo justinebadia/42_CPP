@@ -3,15 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   Span.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jbadia <jbadia@student.42quebec.com>       +#+  +:+       +#+        */
+/*   By: jbadia <jbadia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/10 13:52:07 by jbadia            #+#    #+#             */
-/*   Updated: 2022/06/14 10:22:14 by jbadia           ###   ########.fr       */
+/*   Updated: 2022/06/17 15:25:32 by jbadia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Span.hpp"
 #include <numeric>
+#include <algorithm>
+#include <cmath>
+#include <iostream>
 
 
 Span::Span()
@@ -48,47 +51,29 @@ void Span::addNumber(int number)
    _span.push_back(number);
 }
 
-void Span::addNumber(std::vector<int>::iterator ifirst, std::vector<int>::iterator ilast, std::vector<int> tab)
-{
-	for (std::vector<int>::iterator it = ifirst; it != ilast; it++)
-	{
-		_span[*it] = tab[*it];
-		std::cout << _span[*it] << std::endl;
-	}
-}
 
-int Span::shortestSpan(void)
+unsigned int Span::shortestSpan(void)
 {
 	if (_span.size() <= 1)
 		throw noDistance();
 	std::vector<int> res(_n);
+    std::vector<int> shortest(_n);
 	std::adjacent_difference(_span.begin(), _span.end(), res.begin());
-	int nb = INT32_MAX;
-	for (unsigned int i = 1; i < res.size() ; i++)
-	{
-		int rabs = abs(res[i]);
-		//std::cout << res[i] << std::endl;
-		if (nb > rabs)
-			nb = rabs;
-	}
-	return nb;
+    std::transform(res.begin(), res.end(), shortest.begin(), static_cast<int (*)(int)>(&std::abs));
+    std::vector<int>::iterator it = std::min_element(shortest.begin(), shortest.end());
+    return *it;
 }
 
-int Span::longestSpan(void)
+unsigned int Span::longestSpan(void)
 {
 	if (_span.size() <= 1)
 		throw noDistance();
 	std::vector<int> res(_n);
+    std::vector<int> longest(_n);
 	std::adjacent_difference(_span.begin(), _span.end(), res.begin());
-	int nb = INT32_MIN;
-	for (unsigned int i = 1; i < res.size() ; i++)
-	{
-		int rabs = abs(res[i]);
-	//	std::cout << res[i] << std::endl;
-		if (nb < rabs)
-			nb = rabs;
-	}
-	return nb;
+    std::transform(res.begin(), res.end(), longest.begin(), static_cast<int (*)(int)>(&std::abs));
+    std::vector<int>::iterator it = std::max_element(longest.begin(), longest.end());
+    return *it;
 }
 
 const char* Span::noDistance::what() const throw()

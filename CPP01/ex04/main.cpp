@@ -44,10 +44,11 @@ int main (int argc, char **argv)
 	}
     while (getline(filename, str))
     {
-        for(unsigned int i = str.find(s1); str.find(s1) != std::string::npos; )
+        for(std::string::size_type i = str.find(s1); i != std::string::npos; )
 		{
 				str.erase(i, s1.length());
 				str.insert(i, s2);
+				i += s2.length();
 				i = str.find(s1, i);
 		}
         filename_replace << str;

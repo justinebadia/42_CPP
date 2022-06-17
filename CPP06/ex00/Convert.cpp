@@ -6,7 +6,7 @@
 /*   By: jbadia <jbadia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 19:36:57 by jbadia            #+#    #+#             */
-/*   Updated: 2022/06/10 11:54:11 by jbadia           ###   ########.fr       */
+/*   Updated: 2022/06/17 14:27:18 by jbadia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ Convert::e_type	Convert::getType(void)
 			_float = (float)atof(_str.c_str());	
 			return isFloat;
 		}
-		else if (i == _str.size() - 1)
+		else if (i == _str.size())
 		{
 			_db = std::stod(_str.c_str());
 			return isDouble;

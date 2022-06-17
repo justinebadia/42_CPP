@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Span.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jbadia <jbadia@student.42quebec.com>       +#+  +:+       +#+        */
+/*   By: jbadia <jbadia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/10 13:52:05 by jbadia            #+#    #+#             */
-/*   Updated: 2022/06/14 10:10:15 by jbadia           ###   ########.fr       */
+/*   Updated: 2022/06/17 15:19:07 by jbadia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,18 @@ class Span
     Span &operator=(Span const &rhs);
     
     void addNumber(int number);
-	void addNumber(std::vector<int>::iterator ifirst, std::vector<int>::iterator ilast, std::vector<int> tab);
-    int shortestSpan();
-    int longestSpan();
+
+    template<typename Iter>
+	void addNumber(Iter first, Iter last)
+    {
+        for (Iter it = first; it != last; it++)
+        {
+            addNumber(*it);
+        }
+    }
+
+    unsigned int shortestSpan();
+    unsigned int longestSpan();
 
     private:
         unsigned int _n;
@@ -53,5 +62,7 @@ class Span
             virtual const char* what() const throw();
 	};
 };
+
+std::ostream &operator<<(std::ostream &o, Span const &rhs);
 
 #endif
