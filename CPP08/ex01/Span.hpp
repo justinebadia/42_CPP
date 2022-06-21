@@ -6,7 +6,7 @@
 /*   By: jbadia <jbadia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/10 13:52:05 by jbadia            #+#    #+#             */
-/*   Updated: 2022/06/17 15:19:07 by jbadia           ###   ########.fr       */
+/*   Updated: 2022/06/21 07:36:56 by jbadia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,5 @@ class Span
             virtual const char* what() const throw();
 	};
 };
-
-std::ostream &operator<<(std::ostream &o, Span const &rhs);
 
 #endif

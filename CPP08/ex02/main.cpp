@@ -6,7 +6,7 @@
 /*   By: jbadia <jbadia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/17 14:04:35 by jbadia            #+#    #+#             */
-/*   Updated: 2022/06/17 15:00:14 by jbadia           ###   ########.fr       */
+/*   Updated: 2022/06/21 07:41:50 by jbadia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,6 @@ int main(void)
     for(; itstr != itestr; itstr++)
         std::cout << CYN << *itstr << NC << std::endl;
     std::cout << RED "La size de mutant est de " << str_mut.size() << NC << std::endl;
-
+   
     return 0;
 }

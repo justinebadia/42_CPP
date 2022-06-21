@@ -6,7 +6,7 @@
 #    By: jbadia <jbadia@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/01 09:27:24 by jbadia            #+#    #+#              #
-#    Updated: 2022/06/10 13:36:53 by jbadia           ###   ########.fr        #
+#    Updated: 2022/06/21 07:34:41 by jbadia           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ RM = rm -rf
 OBJ = obj
 
 SRC_C = main.cpp 
-HDR_H = whatever.hpp
+HDR_H = easyfind.hpp
 
 OBJS = $(addprefix $(OBJ)/, $(SRC_C:.cpp=.o))
 

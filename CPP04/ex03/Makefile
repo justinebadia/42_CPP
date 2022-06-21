@@ -6,7 +6,7 @@
 #    By: jbadia <jbadia@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/01 09:27:24 by jbadia            #+#    #+#              #
-#    Updated: 2022/06/17 15:31:39 by jbadia           ###   ########.fr        #
+#    Updated: 2022/06/21 08:03:10 by jbadia           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,8 +17,8 @@ FLAGS = -g -Wall -Wextra -Werror -std=c++98
 RM = rm -rf 
 OBJ = obj
 
-SRC_C = main.cpp
-HDR_H = MutantStack.hpp
+SRC_C = AMateria.cpp Character.cpp Cure.cpp Ice.cpp ICharacter.cpp IMateriaSource.cpp MateriaSource.cpp main.cpp
+HDR_H = AMateria.hpp Character.hpp Cure.hpp Ice.hpp ICharacter.hpp IMateriaSource.hpp MateriaSource.hpp
 
 OBJS = $(addprefix $(OBJ)/, $(SRC_C:.cpp=.o))
 

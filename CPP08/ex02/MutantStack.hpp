@@ -6,7 +6,7 @@
 /*   By: jbadia <jbadia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/17 14:04:44 by jbadia            #+#    #+#             */
-/*   Updated: 2022/06/17 14:14:06 by jbadia           ###   ########.fr       */
+/*   Updated: 2022/06/21 07:38:33 by jbadia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,6 @@ class MutantStack : public std::stack<T>
         {
             return std::stack<T>::c.end();
         }
-    
 };
 
 
