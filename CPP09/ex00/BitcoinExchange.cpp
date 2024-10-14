@@ -173,3 +173,5 @@ void BitcoinExchange::convertValue(std::string input_date, std::string intput_va
         std::cout << CYN << "date: " << date << " value: " << value << CYNP << " => result: " << result << NC << std::endl;
     }
 }
+
+// test
