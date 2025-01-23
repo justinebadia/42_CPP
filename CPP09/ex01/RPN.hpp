@@ -15,6 +15,7 @@
 #define REDB "\e[41m"
 #define BLUP "\e[94m"
 #define CYNP "\e[96m"
+#define VIO "\e[35m"
 #define NC "\e[0m"
 
 class RPN

@@ -42,7 +42,6 @@ void RPN::checkRpnFormat()
                 std::cerr << RED << "Wrong arguments at " << token << ". Supported operator are + / - *" NC << std::endl;
                 exit(EXIT_FAILURE);
             }
-            std::cout << "Operator: " << token << std::endl;
             _opCount++;
         }
         else if (isNumber(token[0]))
@@ -52,7 +51,6 @@ void RPN::checkRpnFormat()
                 std::cerr << RED << "Invalid argument at " << token << ". Allowed numbers are from 0 to 9." NC << std::endl;
                 exit(EXIT_FAILURE);
             }
-            std::cout << "Number: " << token << std::endl;
             _nbCount++;
         }
         else
@@ -66,20 +64,29 @@ void RPN::checkRpnFormat()
         std::cerr << RED << "Invalid expression" << NC << std::endl;
         exit(EXIT_FAILURE);
     }
-
-    std::cout
-        << "Operators: " << _opCount << " Numbers: " << _nbCount << std::endl;
+}
+void printStack(std::stack<int> stack)
+{
+    std::cout << "Stack contents: ";
+    while (!stack.empty())
+    {
+        std::cout << stack.top() << " ";
+        stack.pop();
+    }
+    std::cout << std::endl;
 }
 
 void RPN::calculate()
 {
-    std::cout << "Calculating..." << std::endl;
+    std::cout << RED "Calculating..." NC << std::endl;
     for (size_t i = 0; i < _rpn_exp.length(); i++)
     {
+
         if (isNumber(_rpn_exp[i]))
         {
-            std::cout << "Push: " << _rpn_exp[i] << std::endl;
+            std::cout << RED "Push: " << _rpn_exp[i] << NC << std::endl;
             _stack.push(_rpn_exp[i] - '0');
+            printStack(_stack);
         }
         else if (isOperator(_rpn_exp[i]))
         {
@@ -96,15 +103,15 @@ void RPN::calculate()
             {
             case '+':
                 _stack.push(b + a);
-                std::cout << "Add: " << b << " + " << a << " = " << b + a << std::endl;
+                std::cout << GRN << "Add: " << b << " + " << a << " = " << b + a << NC << std::endl;
                 break;
             case '-':
                 _stack.push(b - a);
-                std::cout << "Sub: " << b << " - " << a << " = " << b - a << std::endl;
+                std::cout << CYN << "Sub: " << b << " - " << a << " = " << b - a << NC << std::endl;
                 break;
             case '*':
                 _stack.push(b * a);
-                std::cout << "Mul: " << b << " * " << a << " = " << b * a << std::endl;
+                std::cout << BLU << "Mul: " << b << " * " << a << " = " << b * a << NC << std::endl;
                 break;
             case '/':
                 if (a == 0)
@@ -113,7 +120,7 @@ void RPN::calculate()
                     exit(EXIT_FAILURE);
                 }
                 _stack.push(b / a);
-                std::cout << "Div: " << b << " / " << a << " = " << b / a << std::endl;
+                std::cout << VIO << "Div: " << b << " / " << a << " = " << b / a << NC << std::endl;
                 break;
             }
         }
